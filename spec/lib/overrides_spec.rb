@@ -10,7 +10,9 @@ checksums = [
     package: "decidim-core",
     files: {
       "/app/permissions/decidim/permissions.rb" => "89cdeb04aca3775b876bf497ac3cc2fb",
-      "/app/cells/decidim/profile_actions_cell.rb" => "58dc7248028205c01a370243fb7b6b6f"
+      "/app/cells/decidim/profile_actions_cell.rb" => "58dc7248028205c01a370243fb7b6b6f",
+      "/config/locales/en.yml" => "f70e1c80e82314a99f14011b865db190",
+      "/config/locales/es.yml" => "139f08e385b564b8d92610b0fa053e95"
     }
   }
 ]
