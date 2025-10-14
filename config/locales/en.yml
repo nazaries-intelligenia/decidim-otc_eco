@@ -19,7 +19,8 @@ en:
         reject: "%{user_name} rejected the %{resource_name} energy community verification"
         unblock: "%{user_name} has unblocked the energy community %{resource_name}"
         verify: "%{user_name} verified the energy community %{resource_name}"
-        verify_via_csv: "%{user_name} verified the energy community %{resource_name} via a CSV file"
+        verify_via_csv: "%{user_name} verified the energy community %{resource_name}
+          via a CSV file"
     download_your_data:
       help:
         user_groups:
@@ -31,51 +32,83 @@ en:
     events:
       groups:
         demoted_membership:
-          email_intro: An energy community admin of <a href="%{resource_url}">%{user_group_name}</a> has removed your admin permissions for that energy community.
-          email_outro: You have received this notification because you are a member of this energy community.
+          email_intro: An energy community admin of <a href="%{resource_url}">%{user_group_name}</a>
+            has removed your admin permissions for that energy community.
+          email_outro: You have received this notification because you are a member
+            of this energy community.
           email_subject: You are no longer an admin of the energy community %{user_group_name}.
-          notification_title: You are no longer an admin of the energy community <a href="%{resource_path}">%{user_group_name}</a>.
+          notification_title: You are no longer an admin of the energy community <a
+            href="%{resource_path}">%{user_group_name}</a>.
         invited_to_group:
-          email_intro: An energy community admin of <a href="%{resource_url}">%{user_group_name}</a> has invited you to join it.
-          email_outro: You have received this notification because you have been invited to an energy community. Please, check the Energy communities tab in your profile to accept the invitation.
+          email_intro: An energy community admin of <a href="%{resource_url}">%{user_group_name}</a>
+            has invited you to join it.
+          email_outro: You have received this notification because you have been invited
+            to an energy community. Please, check the Energy communities tab in your
+            profile to accept the invitation.
           email_subject: You have been invited to join the energy community %{user_group_name}
-          notification_title: You have been invited to join the energy community <a href="%{resource_path}">%{user_group_name}</a>. Check the <a href="%{groups_profile_tab_path}">Energy communities tab</a> in your profile to accept the invitation!
+          notification_title: You have been invited to join the energy community <a
+            href="%{resource_path}">%{user_group_name}</a>. Check the <a href="%{groups_profile_tab_path}">Energy
+            communities tab</a> in your profile to accept the invitation!
         join_request_accepted:
-          email_intro: 'Congratulations! An energy community admin of <a href="%{resource_url}">%{user_group_name}</a> has accepted your request to join it.'
-          email_outro: You have received this notification because your request to join the energy community has been updated.
-          email_subject: Your request to join the energy community %{user_group_name} has been accepted!
+          email_intro: Congratulations! An energy community admin of <a href="%{resource_url}">%{user_group_name}</a>
+            has accepted your request to join it.
+          email_outro: You have received this notification because your request to
+            join the energy community has been updated.
+          email_subject: Your request to join the energy community %{user_group_name}
+            has been accepted!
           notification_title: You have been accepted in the energy community <a href="%{resource_path}">%{user_group_name}</a>.
         join_request_created:
-          email_intro: Someone requested to join the energy community %{user_group_name}. You can accept or reject it from <a href="%{resource_url}">energy community members page</a>.
-          email_outro: You have received this notification because you manage the energy community "%{user_group_name}".
+          email_intro: Someone requested to join the energy community %{user_group_name}.
+            You can accept or reject it from <a href="%{resource_url}">energy community
+            members page</a>.
+          email_outro: You have received this notification because you manage the
+            energy community "%{user_group_name}".
           email_subject: Someone has requested to join the energy community %{user_group_name}
-          notification_title: Someone has requested to join the energy community %{user_group_name}. You can accept or reject the request from <a href="%{resource_path}">the energy community members page</a>.
+          notification_title: Someone has requested to join the energy community %{user_group_name}.
+            You can accept or reject the request from <a href="%{resource_path}">the
+            energy community members page</a>.
         join_request_rejected:
-          email_intro: An energy community admin of <a href="%{resource_url}">%{user_group_name}</a> has rejected your request to join it.
-          email_outro: You have received this notification because your request to join the energy community has been updated.
-          email_subject: Your request to join the energy community %{user_group_name} has been rejected!
-          notification_title: Your request to join the energy community <a href="%{resource_path}">%{user_group_name}</a> has been rejected.
+          email_intro: An energy community admin of <a href="%{resource_url}">%{user_group_name}</a>
+            has rejected your request to join it.
+          email_outro: You have received this notification because your request to
+            join the energy community has been updated.
+          email_subject: Your request to join the energy community %{user_group_name}
+            has been rejected!
+          notification_title: Your request to join the energy community <a href="%{resource_path}">%{user_group_name}</a>
+            has been rejected.
         promoted_to_admin:
-          email_intro: An energy community admin of <a href="%{resource_url}">%{user_group_name}</a> has granted you admin permissions for this energy community.
-          email_outro: You have received this notification because you are a member of this energy community.
-          email_subject: 'You are now an admin of the energy community %{user_group_name}!'
+          email_intro: An energy community admin of <a href="%{resource_url}">%{user_group_name}</a>
+            has granted you admin permissions for this energy community.
+          email_outro: You have received this notification because you are a member
+            of this energy community.
+          email_subject: You are now an admin of the energy community %{user_group_name}!
           notification_title: You are now an admin of the energy community <a href="%{resource_path}">%{user_group_name}</a>.
         removed_from_group:
-          email_intro: An energy community admin of <a href="%{resource_url}">%{user_group_name}</a> has removed you from it.
-          email_outro: You have received this notification because you were a member of that energy community.
-          email_subject: 'You have been removed from the energy community %{user_group_name}!'
+          email_intro: An energy community admin of <a href="%{resource_url}">%{user_group_name}</a>
+            has removed you from it.
+          email_outro: You have received this notification because you were a member
+            of that energy community.
+          email_subject: You have been removed from the energy community %{user_group_name}!
           notification_title: You have been removed from the energy community <a href="%{resource_path}">%{user_group_name}</a>.
         user_group_created:
-          email_intro: A new energy community has been created with the name %{user_group_name}. You can now verify it, if appropriate, in the <a href="%{groups_admin_url}">admin panel</a>.
+          email_intro: A new energy community has been created with the name %{user_group_name}.
+            You can now verify it, if appropriate, in the <a href="%{groups_admin_url}">admin
+            panel</a>.
           email_subject: A new energy community has been created
-          notification_title: The %{user_group_name} energy community has been created. You can now verify it in the <a href="%{groups_admin_path}">admin panel</a>.
+          notification_title: The %{user_group_name} energy community has been created.
+            You can now verify it in the <a href="%{groups_admin_path}">admin panel</a>.
         user_group_updated:
-          email_intro: An energy community with the name %{user_group_name} has updated its profile, leaving it unverified. You can now verify it in the <a href="%{groups_admin_url}">admin panel</a>.
+          email_intro: An energy community with the name %{user_group_name} has updated
+            its profile, leaving it unverified. You can now verify it in the <a href="%{groups_admin_url}">admin
+            panel</a>.
           email_subject: An energy community has updated its profile
-          notification_title: The %{user_group_name} energy community has updated its profile, leaving it unverified. You can now verify it in the <a href="%{groups_admin_path}">admin panel</a>.
+          notification_title: The %{user_group_name} energy community has updated
+            its profile, leaving it unverified. You can now verify it in the <a href="%{groups_admin_path}">admin
+            panel</a>.
     group_admins:
       actions:
-        accept_or_reject_group_invitations: 'The following energy communities have invited you to join them. Accept or reject the invitations:'
+        accept_or_reject_group_invitations: 'The following energy communities have
+          invited you to join them. Accept or reject the invitations:'
     group_members:
       remove:
         error: There was a problem removing this participant from the energy community.
@@ -88,23 +121,31 @@ en:
         edit_user_group: Edit energy community
         update_user_group: Update energy community
       form:
-        email_help: Email of your organization, association, collective, energy community, etc.
-        fill_in_for_verification: 'Fill in these fields if you want your energy community to be verified:'
-        name_help: Name of your organization, association, collective, energy community, etc.
-        nickname_help: Nickname of your organization, association, collective, energy community, etc. Do not use spaces nor accents.
+        email_help: Email of your organization, association, collective, energy community,
+          etc.
+        fill_in_for_verification: 'Fill in these fields if you want your energy community
+          to be verified:'
+        name_help: Name of your organization, association, collective, energy community,
+          etc.
+        nickname_help: Nickname of your organization, association, collective, energy
+          community, etc. Do not use spaces nor accents.
       join:
         error: There was a problem joining the energy community.
-        success: Join request successfully created. An admin will review your request before accepting you to the energy community.
+        success: Join request successfully created. An admin will review your request
+          before accepting you to the energy community.
       leave:
         error: There was a problem leaving the energy community.
-        last_admin: You cannot leave this energy community because you are the last admin. Make another member an admin to be able to leave the energy community.
+        last_admin: You cannot leave this energy community because you are the last
+          admin. Make another member an admin to be able to leave the energy community.
         success: You have left the energy community successfully.
       members:
-        accept_or_reject_join_requests: 'The following participants have requested to join this energy community. Accept or reject their requests:'
+        accept_or_reject_join_requests: 'The following participants have requested
+          to join this energy community. Accept or reject their requests:'
       new:
         create_user_group: Create energy community
         new_user_group: New energy community
-        subtitle: Create an energy community and invite other participants to join in order to participate at a collective level.
+        subtitle: Create an energy community and invite other participants to join
+          in order to participate at a collective level.
       no_user_groups: Does not belong to any energy community yet.
       update:
         error: There was a problem updating the energy community.
@@ -114,9 +155,13 @@ en:
     messaging:
       conversation_mailer:
         new_group_conversation:
-          intro: "%{sender} has started a new conversation with the energy community %{group}. To view it and reply, log in and click on the link you will find below:"
+          intro: "%{sender} has started a new conversation with the energy community
+            %{group}. To view it and reply, log in and click on the link you will
+            find below:"
         new_group_message:
-          intro: "%{sender} has posted new messages in the conversation with the energy community %{group}. To view them and reply, log in and click on the link you will find below:"
+          intro: "%{sender} has posted new messages in the conversation with the energy
+            community %{group}. To view them and reply, log in and click on the link
+            you will find below:"
     open_data:
       help:
         user_groups:
@@ -130,7 +175,12 @@ en:
         users:
           groups: The ID and name of the energy community
     profiles:
-      default_officialization_text_for_user_groups: This energy community is publicly verified, its name has been verified to match its real name.
+      default_officialization_text_for_user_groups: This energy community is publicly
+        verified, its name has been verified to match its real name.
+      shared:
+        represent_user_group:
+          represent_user_group: I represent an energy community
+          select_user_group: Select an energy community
       show:
         groups: Energy communities
       user:
@@ -140,14 +190,13 @@ en:
           join_user_group: Request to join energy community
           leave_user_group: Leave energy community
           manage_user_group: Manage energy community
-        fill_in_email_to_confirm_it: Please, enter your energy community's email to confirm it.
-      shared:
-        represent_user_group:
-          represent_user_group: I represent an energy community
-          select_user_group: Select an energy community
+        fill_in_email_to_confirm_it: Please, enter your energy community's email to
+          confirm it.
       user_conversations:
         index:
-          conversations_info: Conversations are private. No one else can see them. You can start a conversation with any participant or energy community registered on the platform.
+          conversations_info: Conversations are private. No one else can see them.
+            You can start a conversation with any participant or energy community
+            registered on the platform.
   layouts:
     decidim:
       user_profile:
