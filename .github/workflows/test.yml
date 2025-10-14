@@ -39,6 +39,8 @@ jobs:
       - uses: nanasess/setup-chromedriver@v2
       - run: |
           sudo apt update && sudo apt install wkhtmltopdf
+      - run: |
+          sudo apt install imagemagick
       - run: bundle exec rake db:test:prepare
         name: Setup database
       - name: Precompile assets

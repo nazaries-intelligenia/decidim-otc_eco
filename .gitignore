@@ -53,3 +53,6 @@
 tailwind.config.js
 
 .idea/
+
+# Ignore rspec failures
+.rspec-failures
