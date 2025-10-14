@@ -18,7 +18,7 @@ RSpec.describe "User group creation" do
     let(:user) { regular_user }
 
     it "does not show create_user_group button in the rendered view" do
-      expect(page).to have_no_link("Create group")
+      expect(page).to have_no_link("Create energy community")
       expect(page).to have_no_css("a[href*='groups/new']")
     end
   end
@@ -27,7 +27,7 @@ RSpec.describe "User group creation" do
     let(:user) { admin_user }
 
     it "shows create_user_group button in the rendered view" do
-      expect(page).to have_link("Create group")
+      expect(page).to have_link("Create energy community")
       expect(page).to have_css("a[href*='groups/new']")
     end
   end
