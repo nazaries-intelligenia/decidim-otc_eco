@@ -1,2 +1,6 @@
 ---
 en:
+  decidim:
+    groups:
+      form:
+        address_help: 'Address: used by Geocoder to find the location'

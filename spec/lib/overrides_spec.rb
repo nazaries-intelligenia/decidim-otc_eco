@@ -10,7 +10,11 @@ checksums = [
     package: "decidim-core",
     files: {
       "/app/permissions/decidim/permissions.rb" => "89cdeb04aca3775b876bf497ac3cc2fb",
-      "/app/cells/decidim/profile_actions_cell.rb" => "58dc7248028205c01a370243fb7b6b6f"
+      "/app/cells/decidim/profile_actions_cell.rb" => "58dc7248028205c01a370243fb7b6b6f",
+      "/app/models/decidim/user_group.rb" => "bfd3dad56e66adf9d8dbf1a9d9c4fcd4",
+      "/app/forms/decidim/user_group_form.rb" => "841f9cc427698a42764873504589151e",
+      "/app/views/decidim/groups/_form.html.erb" => "c0fe379ba854c18a5c6c2f32f146bf38",
+      "/app/commands/decidim/create_user_group.rb" => "3dbf8247f6b949d3b700dc5cdfb54d9c"
     }
   }
 ]
