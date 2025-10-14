@@ -8,11 +8,11 @@ module Decidim
       private
 
       def user_group_action?
-        return unless permission_action.subject == :user_group
+        return false unless permission_action.subject == :user_group
 
         # Only allow admins to create user groups
         if permission_action.action == :create
-          is_admin = user&.admin? || user&.organization&.admins&.include?(user)
+          is_admin = user&.admin? || user.organization&.admins&.include?(user)
           return toggle_allow(is_admin)
         end
 

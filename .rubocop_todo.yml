@@ -1,0 +1,7 @@
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'app/cells/concerns/decidim/profile_actions_cell_override.rb'
+    - 'app/permissions/concerns/decidim/permissions_override.rb'
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'app/permissions/concerns/decidim/permissions_override.rb'
