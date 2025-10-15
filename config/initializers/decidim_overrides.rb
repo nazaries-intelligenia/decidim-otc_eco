@@ -3,4 +3,9 @@
 Rails.application.config.to_prepare do
   Decidim::Permissions.include(Decidim::PermissionsOverride)
   Decidim::ProfileActionsCell.include(Decidim::ProfileActionsCellOverride)
+  Decidim::UserGroup.include(Decidim::UserGroupOverride)
+  Decidim::Assembly.include(Decidim::AssemblyOverride)
+  Decidim::CreateUserGroup.include(Decidim::CreateUserGroupOverride)
+  Decidim::AcceptUserGroupJoinRequest.include(Decidim::AcceptUserGroupJoinRequestOverride)
+  Decidim::AcceptGroupInvitation.include(Decidim::AcceptGroupInvitationOverride)
 end

@@ -1,0 +1,65 @@
+# frozen_string_literal: true
+
+module Decidim
+  module CreateUserGroupOverride
+    extend ActiveSupport::Concern
+
+    included do
+
+      attr_reader :form, :user_group
+
+      def call
+        return broadcast(:invalid) if form.invalid?
+
+        with_events(with_transaction: true) do
+          create_user_group
+          create_membership
+          create_assembly
+          create_debates_component
+          add_members_as_private_users
+        end
+        notify_admins
+
+        broadcast(:ok, @user_group)
+      end
+
+      private
+
+      def create_assembly
+        @assembly = Decidim::Assembly.create!(
+          organization: form.current_organization,
+          title: { form.current_organization.default_locale => @user_group.name },
+          subtitle: { form.current_organization.default_locale => "" },
+          short_description: { form.current_organization.default_locale => @user_group.about || "" },
+          description: { form.current_organization.default_locale => @user_group.about || "" },
+          slug: @user_group.nickname,
+          user_group: @user_group,
+          published_at: Time.current,
+          private_space: true
+        )
+      end
+
+      def create_debates_component
+        Decidim::Component.create!(
+          manifest_name: :debates,
+          name: { form.current_organization.default_locale => "Foro" },
+          participatory_space: @assembly,
+          published_at: Time.current,
+          settings: {
+            comments_enabled: true
+          }
+        )
+      end
+
+      def add_members_as_private_users
+        @user_group.users.each do |user|
+          Decidim::ParticipatorySpacePrivateUser.create!(
+            user: user,
+            privatable_to: @assembly,
+            published: true
+          )
+        end
+      end
+    end
+  end
+end
