@@ -5,7 +5,6 @@ module Decidim
     extend ActiveSupport::Concern
 
     included do
-
       attr_reader :form, :user_group
 
       def call

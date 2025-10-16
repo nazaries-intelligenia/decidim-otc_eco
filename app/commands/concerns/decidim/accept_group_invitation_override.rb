@@ -5,7 +5,6 @@ module Decidim
     extend ActiveSupport::Concern
 
     included do
-
       def call
         return broadcast(:invalid) if membership.blank?
 
@@ -20,7 +19,7 @@ module Decidim
       private
 
       def add_to_assembly_private_users
-        return unless user_group.assembly.present?
+        return if user_group.assembly.blank?
 
         Decidim::ParticipatorySpacePrivateUser.find_or_create_by!(
           user: user,
