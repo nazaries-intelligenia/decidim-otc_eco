@@ -8,4 +8,6 @@ Rails.application.config.to_prepare do
   Decidim::CreateUserGroup.include(Decidim::CreateUserGroupOverride)
   Decidim::AcceptUserGroupJoinRequest.include(Decidim::AcceptUserGroupJoinRequestOverride)
   Decidim::AcceptGroupInvitation.include(Decidim::AcceptGroupInvitationOverride)
+  Decidim::LeaveUserGroup.include(Decidim::LeaveUserGroupOverride)
+  Decidim::RemoveUserFromGroup.include(Decidim::RemoveUserFromGroupOverride)
 end
