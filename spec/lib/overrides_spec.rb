@@ -18,7 +18,8 @@ checksums = [
       "/app/commands/decidim/accept_group_invitation.rb" => "843946937cb0f7104f7e672c70f45dd8",
       "/app/commands/decidim/accept_user_group_join_request.rb" => "b2753c5bfae52c904c2f73cc3c8a84ec",
       "/app/commands/decidim/leave_user_group.rb" => "c48bb5f45bdbf4966171dc4f0f6921db",
-      "/app/commands/decidim/remove_user_from_group.rb" => "ed09c455dce565355bf4d64456e03f2b"
+      "/app/commands/decidim/remove_user_from_group.rb" => "ed09c455dce565355bf4d64456e03f2b",
+      "/app/forms/decidim/user_group_form.rb" => "841f9cc427698a42764873504589151e"
     }
   },
   {
