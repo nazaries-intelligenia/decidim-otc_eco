@@ -406,6 +406,12 @@ Decidim.configure do |config|
   config.denied_passwords = Rails.application.secrets.decidim[:denied_passwords] if Rails.application.secrets.decidim[:denied_passwords].present?
   config.allow_open_redirects = Rails.application.secrets.decidim[:allow_open_redirects] if Rails.application.secrets.decidim[:allow_open_redirects].present?
   config.enable_etiquette_validator = Rails.application.secrets.decidim[:enable_etiquette_validator] if Rails.application.secrets.decidim[:enable_etiquette_validator].present?
+
+  # Energy Community Member authorization handler
+  # This handler automatically manages authorization based on user group membership
+  config.authorization_handlers = [
+    "Decidim::Verifications::EnergyCommunityMember"
+  ]
 end
 
 if Decidim.module_installed? :api

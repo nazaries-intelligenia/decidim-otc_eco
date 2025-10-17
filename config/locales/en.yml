@@ -1,2 +1,5 @@
 ---
 en:
+  decidim:
+    errors:
+      not_in_energy_community: You must be a member of at least one energy community
