@@ -31,10 +31,11 @@ module Decidim
           subtitle: { form.current_organization.default_locale => "" },
           short_description: { form.current_organization.default_locale => @user_group.about || "" },
           description: { form.current_organization.default_locale => @user_group.about || "" },
-          slug: @user_group.nickname,
+          slug: nickname_to_slug(@user_group.nickname),
           user_group: @user_group,
           published_at: Time.current,
-          private_space: true
+          private_space: true,
+          is_transparent: false
         )
       end
 
@@ -58,6 +59,15 @@ module Decidim
             published: true
           )
         end
+      end
+
+      def nickname_to_slug(nickname)
+        slug = nickname.dup
+        slug.gsub!("_", "-")
+        slug.prepend("a") unless slug[0] =~ /[A-Za-z]/
+        slug.gsub!(/[^A-Za-z0-9-]/, "")
+
+        slug
       end
     end
   end
