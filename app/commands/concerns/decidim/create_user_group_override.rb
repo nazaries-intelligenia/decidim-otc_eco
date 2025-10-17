@@ -24,6 +24,23 @@ module Decidim
 
       private
 
+      def create_user_group
+        @user_group = UserGroup.create!(
+          email: form.email,
+          name: form.name,
+          nickname: form.nickname,
+          organization: form.current_organization,
+          about: form.about,
+          avatar: form.avatar,
+          extended_data: {
+            phone: form.phone,
+            document_number: form.document_number,
+            rejected_at: nil,
+            verified_at: Time.current
+          }
+        )
+      end
+
       def create_assembly
         @assembly = Decidim::Assembly.create!(
           organization: form.current_organization,
