@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe Decidim::Assembly, type: :model do
+RSpec.describe Decidim::Assembly do
   let(:organization) { create(:organization) }
   let(:user_group) { create(:user_group, organization: organization) }
 
@@ -39,4 +39,3 @@ RSpec.describe Decidim::Assembly, type: :model do
     expect(assembly).to be_valid
   end
 end
-

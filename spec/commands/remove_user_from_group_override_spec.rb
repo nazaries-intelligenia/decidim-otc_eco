@@ -3,12 +3,12 @@
 require "rails_helper"
 
 RSpec.describe Decidim::RemoveUserFromGroup do
+  subject { described_class.new(membership, user_group) }
+
   let(:organization) { create(:organization) }
   let(:user) { create(:user, :confirmed, organization: organization) }
   let(:user_group) { create(:user_group, organization: organization) }
   let(:other_group) { create(:user_group, organization: organization) }
-
-  subject { described_class.new(membership, user_group) }
 
   describe "#call (override behavior)" do
     context "when membership is missing" do
@@ -65,7 +65,7 @@ RSpec.describe Decidim::RemoveUserFromGroup do
       it "removes only the membership" do
         Decidim::Assembly.where(user_group: user_group).delete_all
 
-        expect { described_class.new(membership, user_group).call }.to change { Decidim::UserGroupMembership.count }.by(-1)
+        expect { described_class.new(membership, user_group).call }.to change(Decidim::UserGroupMembership, :count).by(-1)
         expect(Decidim::ParticipatorySpacePrivateUser.exists?(user: user)).to be false
       end
     end

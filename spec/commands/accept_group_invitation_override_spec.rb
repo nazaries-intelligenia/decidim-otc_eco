@@ -3,6 +3,8 @@
 require "rails_helper"
 
 RSpec.describe Decidim::AcceptGroupInvitation do
+  subject { described_class.new(user_group, invited_user) }
+
   let(:organization) { create(:organization) }
   let(:invited_user) { create(:user, :confirmed, organization: organization) }
   let(:creator_user) { create(:user, :confirmed, organization: organization) }
@@ -13,15 +15,13 @@ RSpec.describe Decidim::AcceptGroupInvitation do
     Decidim::UserGroupMembership.create!(user: invited_user, user_group: user_group, role: :invited)
   end
 
-  subject { described_class.new(user_group, invited_user) }
-
   describe "#call (override behavior)" do
     context "when membership is missing" do
       it "broadcasts :invalid" do
         # remove membership
         Decidim::UserGroupMembership.delete_all
 
-        expect { subject.call }.not_to change { Decidim::UserGroupMembership.count }
+        expect { subject.call }.not_to(change(Decidim::UserGroupMembership, :count))
         # the original command should not create any private users either
         expect(Decidim::ParticipatorySpacePrivateUser.exists?(user: invited_user)).to be false
       end

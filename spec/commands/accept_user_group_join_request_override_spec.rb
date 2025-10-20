@@ -3,20 +3,20 @@
 require "rails_helper"
 
 RSpec.describe Decidim::AcceptUserGroupJoinRequest do
+  subject { described_class.new(membership) }
+
   let(:organization) { create(:organization) }
   let(:user) { create(:user, :confirmed, organization: organization) }
   let(:user_group) { create(:user_group, organization: organization) }
 
   let!(:membership) { Decidim::UserGroupMembership.create!(user: user, user_group: user_group, role: :requested) }
 
-  subject { described_class.new(membership) }
-
   describe "#call (override behavior)" do
     context "when membership role is not requested" do
       it "does not accept and does not create private user" do
         membership.update!(role: :member)
 
-        expect { subject.call }.not_to change { Decidim::ParticipatorySpacePrivateUser.count }
+        expect { subject.call }.not_to(change(Decidim::ParticipatorySpacePrivateUser, :count))
         # membership role should remain as member
         expect(membership.reload.role.to_s).to eq("member")
       end
@@ -58,4 +58,3 @@ RSpec.describe Decidim::AcceptUserGroupJoinRequest do
     end
   end
 end
-

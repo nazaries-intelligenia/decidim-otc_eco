@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe Decidim::UserGroup, type: :model do
+RSpec.describe Decidim::UserGroup do
   let(:organization) { create(:organization) }
   let(:user_group) { create(:user_group, organization: organization) }
 
@@ -41,9 +41,8 @@ RSpec.describe Decidim::UserGroup, type: :model do
       decidim_organization_id: organization.id
     )
 
-    expect(Decidim::Assembly.where(user_group: user_group).exists?).to be true
+    expect(Decidim::Assembly.exists?(user_group: user_group)).to be true
 
     expect { user_group.destroy }.to change(Decidim::Assembly, :count).by(-1)
   end
 end
-

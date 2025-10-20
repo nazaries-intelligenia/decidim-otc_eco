@@ -3,6 +3,8 @@
 require "rails_helper"
 
 RSpec.describe Decidim::CreateUserGroup do
+  subject { described_class.new(form) }
+
   let(:organization) { create(:organization) }
   let(:user) { create(:user, :confirmed, organization: organization) }
 
@@ -24,8 +26,6 @@ RSpec.describe Decidim::CreateUserGroup do
       current_user: user
     )
   end
-
-  subject { described_class.new(form) }
 
   describe "#call (override behavior)" do
     before do
@@ -54,8 +54,8 @@ RSpec.describe Decidim::CreateUserGroup do
 
       # nickname "_1bad_name" -> replace _ with - => "-1bad-name" -> prepend 'a' => "a-1bad-name" -> remove invalid chars (none)
       expect(assembly.slug).to eq("a-1bad-name")
-      expect(assembly.private_space).to eq(true)
-      expect(assembly.is_transparent).to eq(false)
+      expect(assembly.private_space).to be(true)
+      expect(assembly.is_transparent).to be(false)
     end
 
     it "creates a debates component for the assembly with comments enabled" do
