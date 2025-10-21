@@ -4,3 +4,6 @@ en:
     groups:
       form:
         address_help: 'Address: used by Geocoder to find the location'
+      members_count:
+        one: "%{count} member"
+        other: "%{count} members"
