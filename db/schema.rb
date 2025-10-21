@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_07_28_125821) do
+ActiveRecord::Schema[7.0].define(version: 2025_10_21_113217) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
   enable_extension "pg_trgm"
@@ -205,11 +205,13 @@ ActiveRecord::Schema[7.0].define(version: 2025_07_28_125821) do
     t.integer "follows_count", default: 0, null: false
     t.jsonb "announcement"
     t.datetime "deleted_at"
+    t.integer "decidim_user_group_id"
     t.index ["decidim_area_id"], name: "index_decidim_assemblies_on_decidim_area_id"
     t.index ["decidim_assemblies_type_id"], name: "index_decidim_assemblies_on_decidim_assemblies_type_id"
     t.index ["decidim_organization_id", "slug"], name: "index_unique_assembly_slug_and_organization", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_assemblies_on_decidim_organization_id"
     t.index ["decidim_scope_id"], name: "index_decidim_assemblies_on_decidim_scope_id"
+    t.index ["decidim_user_group_id"], name: "index_decidim_assemblies_on_decidim_user_group_id"
     t.index ["deleted_at"], name: "index_decidim_assemblies_on_deleted_at"
     t.index ["parent_id"], name: "decidim_assemblies_assemblies_on_parent_id"
   end
@@ -1705,6 +1707,9 @@ ActiveRecord::Schema[7.0].define(version: 2025_07_28_125821) do
     t.jsonb "officialized_as"
     t.datetime "admin_terms_accepted_at", precision: nil
     t.boolean "email_on_assigned_proposals", default: true
+    t.text "address"
+    t.decimal "latitude", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
     t.index ["confirmation_token"], name: "index_decidim_users_on_confirmation_token", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_users_on_decidim_organization_id"
     t.index ["email", "decidim_organization_id"], name: "index_decidim_users_on_email_and_decidim_organization_id", unique: true, where: "((deleted_at IS NULL) AND (managed = false) AND ((type)::text = 'Decidim::User'::text))"
@@ -1713,11 +1718,13 @@ ActiveRecord::Schema[7.0].define(version: 2025_07_28_125821) do
     t.index ["invitations_count"], name: "index_decidim_users_on_invitations_count"
     t.index ["invited_by_id", "invited_by_type"], name: "index_decidim_users_on_invited_by_id_and_invited_by_type"
     t.index ["invited_by_id"], name: "index_decidim_users_on_invited_by_id"
+    t.index ["latitude", "longitude"], name: "index_decidim_users_on_lat_lng", where: "((latitude IS NOT NULL) AND (longitude IS NOT NULL))"
     t.index ["nickname", "decidim_organization_id"], name: "index_decidim_users_on_nickame_and_decidim_organization_id", unique: true, where: "((deleted_at IS NULL) AND (managed = false))"
     t.index ["notifications_sending_frequency"], name: "index_decidim_users_on_notifications_sending_frequency"
     t.index ["officialized_at"], name: "index_decidim_users_on_officialized_at"
     t.index ["reset_password_token"], name: "index_decidim_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_decidim_users_on_unlock_token", unique: true
+    t.check_constraint "type::text = 'Decidim::UserGroup'::text OR address IS NULL AND latitude IS NULL AND longitude IS NULL", name: "decidim_users_geocoding_only_for_user_groups"
   end
 
   create_table "decidim_verifications_conflicts", force: :cascade do |t|
