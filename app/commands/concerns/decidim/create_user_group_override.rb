@@ -14,6 +14,7 @@ module Decidim
           create_user_group
           create_membership
           create_assembly
+          create_main_data_content_block
           create_debates_component
           add_members_as_private_users
         end
@@ -53,6 +54,17 @@ module Decidim
           published_at: Time.current,
           private_space: true,
           is_transparent: false
+        )
+      end
+
+      def create_main_data_content_block
+        Decidim::ContentBlock.create!(
+          decidim_organization_id: form.current_organization.id,
+          manifest_name: "main_data",
+          scope_name: "assembly_homepage",
+          scoped_resource_id: @assembly.id,
+          published_at: Time.current,
+          weight: 1
         )
       end
 

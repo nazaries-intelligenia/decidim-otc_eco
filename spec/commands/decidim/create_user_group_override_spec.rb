@@ -67,6 +67,22 @@ RSpec.describe Decidim::CreateUserGroup do
       expect(component.settings["comments_enabled"]).to be true
     end
 
+    it "creates a main_data content block for the assembly" do
+      ug = Decidim::UserGroup.find_by(email: "group@example.com")
+      assembly = Decidim::Assembly.find_by(user_group: ug)
+
+      content_block = Decidim::ContentBlock.find_by(
+        scoped_resource_id: assembly.id,
+        manifest_name: "main_data",
+        scope_name: "assembly_homepage"
+      )
+
+      expect(content_block).not_to be_nil
+      expect(content_block.decidim_organization_id).to eq(organization.id)
+      expect(content_block.published_at).not_to be_nil
+      expect(content_block.weight).to eq(1)
+    end
+
     it "adds the group's users as private users to the assembly" do
       ug = Decidim::UserGroup.find_by(email: "group@example.com")
       assembly = Decidim::Assembly.find_by(user_group: ug)
