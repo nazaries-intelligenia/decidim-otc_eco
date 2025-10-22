@@ -23,7 +23,10 @@ RSpec.describe Decidim::CreateUserGroup do
       avatar: nil,
       phone: "+34123456",
       document_number: "ID-123",
-      current_user: user
+      current_user: user,
+      address: 'Street 123, 12345 City, Country',
+      latitude: 1.234567,
+      longitude: 2.345678
     )
   end
 
