@@ -6,7 +6,7 @@ module Decidim
 
     included do
       def geocoded_user_groups
-        @geocoded_user_groups ||= Decidim::UserGroups::AcceptedUserGroups.for(model).select(&:geocoded_and_valid?)
+        @geocoded_user_groups ||= Decidim::UserGroup.all.select(&:geocoded_and_valid?)
       end
 
       def display_map?
