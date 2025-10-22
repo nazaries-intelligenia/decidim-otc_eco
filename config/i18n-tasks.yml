@@ -1,0 +1,31 @@
+---
+
+base_locale: en
+locales: [en]
+
+ignore_unused:
+  - 'activemodel.models.decidim/demoted_membership'
+  - 'activemodel.models.decidim/invited_to_group_event'
+  - 'activemodel.models.decidim/promote_to_admin'
+  - 'activemodel.models.decidim/promoted_to_admin_event'
+  - 'activemodel.models.decidim/removed_from_group'
+  - 'activemodel.models.decidim/user_group_created_event'
+  - 'activerecord.models.decidim/user_group.*'
+  - 'decidim.admin_log.user_group.*'
+  - 'decidim.download_your_data.help.user_groups.*'
+  - 'decidim.events.groups.*'
+  - 'decidim.group_admins.actions.*'
+  - 'decidim.group_members.*'
+  - 'decidim.groups.*'
+  - 'decidim.members.no_members'
+  - 'decidim.messaging.conversation_mailer.new_group_conversation.*'
+  - 'decidim.messaging.conversation_mailer.new_group_message.*'
+  - 'decidim.open_data.help.user_groups.*'
+  - 'decidim.open_data.help.users.groups'
+  - 'decidim.profiles.default_officialization_text_for_user_groups'
+  - 'decidim.profiles.shared.represent_user_group.*'
+  - 'decidim.profiles.show.groups'
+  - 'decidim.profiles.user.actions.*'
+  - 'decidim.profiles.user.fill_in_email_to_confirm_it'
+  - 'decidim.profiles.user_conversations.index.conversations_info'
+  - 'layouts.decidim.user_profile.user_groups'

@@ -1,0 +1,222 @@
+---
+es:
+  activemodel:
+    models:
+      decidim/demoted_membership: Ya no eres una administradora de comunidad energética
+      decidim/invited_to_group_event: Invitada a la comunidad energética
+      decidim/promote_to_admin: Promocionada a administradora de la comunidad energética
+      decidim/promoted_to_admin_event: Promocionada a administradora de la comunidad
+        energética
+      decidim/removed_from_group: Eliminada de la comunidad energética
+      decidim/user_group_created_event: Comunidad Energética creada
+  activerecord:
+    models:
+      decidim/user_group:
+        one: Comunidad Energética
+        other: Comunidades Energéticas
+  decidim:
+    admin_log:
+      user_group:
+        reject: "%{user_name} rechazó la verificación de la comunidad energética %{resource_name}"
+        unblock: "%{user_name} ha desbloqueado la comunidad energética de usuarias
+          %{resource_name}"
+        verify: "%{user_name} verificó la comunidad energética %{resource_name}"
+        verify_via_csv: "%{user_name} verificó la comunidad energética %{resource_name}
+          a través de un archivo CSV"
+    download_your_data:
+      help:
+        user_groups:
+          document_number: El número de documento de esta comunidad energética de
+            usuarias
+          id: El identificador único de esta comunidad energética de usuarias
+          name: El nombre de esta comunidad energética de usuarias
+          phone: El número de teléfono de esta comunidad energética de usuarias
+          verified_at: La fecha y hora en que se verificó esta comunidad energética
+            de usuarias
+    events:
+      groups:
+        demoted_membership:
+          email_intro: Una administradora de la comunidad energética <a href="%{resource_url}">%{user_group_name}</a>
+            ha eliminado tus permisos de administración para esa comunidad.
+          email_outro: Has recibido esta notificación porque eres miembro de esta
+            comunidad energética.
+          email_subject: Ya no eres administradora de la comunidad energética %{user_group_name}.
+          notification_title: Ya no eres administradora de la comunidad energética
+            <a href="%{resource_path}">%{user_group_name}</a>.
+        invited_to_group:
+          email_intro: Un administradora de la comunidad energética <a href="%{resource_url}">%{user_group_name}</a>
+            te ha invitado a unirte a ella.
+          email_outro: Has recibido esta notificación porque te han invitado a una
+            comunidad energética. Por favor, revisa la pestaña Comunidades Energéticas
+            en tu perfil para aceptar la invitación.
+          email_subject: Te han invitado a unirte a la comunidad energética %{user_group_name}
+          notification_title: Te han invitado a unirte a la comunidad energética <a
+            href="%{resource_path}">%{user_group_name}</a> . Revisa la pestaña <a
+            href="%{groups_profile_tab_path}">Comunidades Energéticas</a> en tu perfil
+            para aceptar la invitación!
+        join_request_accepted:
+          email_intro: ¡Felicidades! Una administradora de la comunidad energética
+            <a href="%{resource_url}">%{user_group_name}</a> ha aceptado tu solicitud
+            para unirte a ella.
+          email_outro: Has recibido esta notificación porque tu solicitud de incorporación
+            a la comunidad energética se ha actualizado.
+          email_subject: Tu solicitud para unirte a la comunidad energética %{user_group_name}
+            ha sido aceptada!
+          notification_title: Has sido aceptada en la comunidad energética <a href="%{resource_path}">%{user_group_name}</a>.
+        join_request_created:
+          email_intro: Alguien pidió unirse a la comunidad energética %{user_group_name}.
+            Puedes aceptarla o rechazarla desde <a href="%{resource_url}">miembros
+            de la comunidad energética en la página</a>.
+          email_outro: Has recibido esta notificación porque administras la comunidad
+            energética "%{user_group_name}".
+          email_subject: Alguien ha solicitado unirse a la comunidad energética %{user_group_name}
+          notification_title: Alguien ha solicitado unirse a la comunidad energética
+            %{user_group_name}. Puedes aceptar o rechazar la solicitud desde <a href="%{resource_path}">la
+            página de miembros de la comunidad energética</a>.
+        join_request_rejected:
+          email_intro: Una administradora de la comunidad energética <a href="%{resource_url}">%{user_group_name}</a>
+            ha rechazado tu solicitud para unirte a ella.
+          email_outro: Has recibido esta notificación porque tu solicitud de incorporación
+            a la comunidad energética se ha actualizado.
+          email_subject: Tu solicitud para unirte a la comunidad energética %{user_group_name}
+            ha sido rechazada!
+          notification_title: Tu solicitud para unirte a la comunidad energética <a
+            href="%{resource_path}">%{user_group_name}</a> ha sido rechazada.
+        promoted_to_admin:
+          email_intro: Una administradora de la comunidad energética <a href="%{resource_url}">%{user_group_name}</a>
+            te ha otorgado permisos de administración para esta comunidad.
+          email_outro: Has recibido esta notificación porque eres miembro de esta
+            comunidad energética.
+          email_subject: "¡Ahora eres administradora de la comunidad energética %{user_group_name}!"
+          notification_title: Ahora eres administradora de la comunidad energética
+            <a href="%{resource_path}">%{user_group_name}</a>.
+        removed_from_group:
+          email_intro: Una administradora de la comunidad energética <a href="%{resource_url}">%{user_group_name}</a>
+            te ha eliminado de ésta.
+          email_outro: Has recibido esta notificación porque eras miembro de esa comunidad
+            energética.
+          email_subject: "¡Has sido eliminada de la comunidad energética %{user_group_name}!"
+          notification_title: Has sido eliminado de la comunidad energética <a href="%{resource_path}">%{user_group_name}</a>.
+        user_group_created:
+          email_intro: Se ha creado una nueva comunidad energética con el nombre %{user_group_name}.
+            Ahora puedes verificarla, si procede, en el <a href="%{groups_admin_url}">panel
+            de administración</a>.
+          email_subject: Se ha creado una nueva comunidad energética
+          notification_title: Se ha creado la comunidad energética %{user_group_name}.
+            Ahora puedes verificarlo en el <a href="%{groups_admin_path}">panel de
+            administración</a>.
+        user_group_updated:
+          email_intro: La comunidad energética %{user_group_name} ha actualizado su
+            perfil perdiendo la verificación. Puedes volver a verificarla a través
+            del <a href="%{groups_admin_url}">panel de administración</a>.
+          email_subject: Una comunidad energética ha actualizado su perfil
+          notification_title: La comunidad energética %{user_group_name} ha actualizado
+            su perfil perdiendo la verificación. Puedes volver a verificarla a través
+            del <a href="%{groups_admin_path}">panel de administración</a>.
+    group_admins:
+      actions:
+        accept_or_reject_group_invitations: 'Las siguientes comunidades energéticas
+          te han invitado a unirte a ellas. Acepta o rechaza las invitaciones:'
+    group_members:
+      accept:
+        error: Se ha producido un error al aceptar esta solicitud de incorporación
+          a la comunidad energética.
+      reject:
+        error: Se ha producido un error al rechazar esta solicitud de incorporación
+          a la comunidad energética.
+      remove:
+        error: Se ha producido un error al eliminar a esta participante de la comunidad
+          energética.
+        success: Participante eliminada correctamente de la comunidad energética.
+    groups:
+      create:
+        error: Se ha producido un error al crear la comunidad energética.
+        success: Comunidad Energética creada correctamente.
+      edit:
+        edit_user_group: Editar la comunidad energética
+        update_user_group: Actualizar la comunidad energética
+      form:
+        email_help: Correo electrónico de tu organización, asociación, colectivo,
+          comunidad energética, etc.
+        fill_in_for_verification: 'Rellena estos campos si deseas que tu comunidad
+          energética sea verificada:'
+        name_help: Nombre de tu organización, asociación, colectivo, comunidad energética,
+          etc.
+        nickname_help: Alias de tu organización, asociación, colectivo, comunidad
+          energética, etc. No uses espacios ni tildes.
+      join:
+        error: Se ha producido un error al unirte a la comunidad energética.
+        success: La solicitud para formar parte se ha enviado correctamente. Una administradora
+          revisará tu solicitud antes de aceptarte en la comunidad energética.
+      leave:
+        error: Se ha producido un error al dejar la comunidad energética.
+        last_admin: No puedes abandonar esta comunidad energética porque eres la última
+          administradora. Haz administradora a otra miembro para poder abandonar la
+          comunidad energética.
+        success: Has dejado la comunidad energética correctamente.
+      members:
+        accept_or_reject_join_requests: 'Las siguientes participantes han solicitado
+          unirse a esta comunidad energética. Acepta o rechaza sus solicitudes:'
+      new:
+        create_user_group: Crear una comunidad energética
+        new_user_group: Nueva comunidad energética
+        subtitle: Crea una comunidad energética e invita a otras participantes a unirse
+          para participar a nivel colectivo.
+      no_user_groups: Aún no pertenece a ninguna comunidad energética.
+      update:
+        error: Se ha producido un error al actualizar la comunidad energética.
+        success: La comunidad energética se ha actualizado correctamente.
+    members:
+      no_members: Esta comunidad energética aún no tiene ningún miembro.
+    messaging:
+      conversation_mailer:
+        new_group_conversation:
+          intro: "%{sender} ha iniciado una nueva conversación con la comunidad energética
+            %{group}. Para verlo y responder, inicia tu sesión y haz clic en el enlace
+            que encontrarás más abajo:"
+        new_group_message:
+          intro: "%{sender} ha añadido nuevos mensajes en la conversación con la comunidad
+            energética %{group}. Para verlos y responder, inicia tu sesión y haz clic
+            en el enlace que encontrarás más abajo:"
+    open_data:
+      help:
+        user_groups:
+          avatar_url: El avatar de la comunidad energética de usuarias
+          badge: La insignia de la comunidad energética de usuarias
+          id: El identificador único de la comunidad energética de usuarias
+          members: El ID y el nombre de las usuarias que pertenecen a la comunidad
+            energética
+          members_count: El número de miembros que forman parte de la comunidad energética
+            de usuarias
+          name: El nombre que se muestra de la comunidad energética de usuarias
+          nickname: El nombre de usuaria de la comunidad energética de usuarias
+        users:
+          groups: El ID y el nombre de la comunidad energética de usuarias
+    profiles:
+      default_officialization_text_for_user_groups: Esta comunidad energética está
+        verificada públicamente, su nombre se ha verificado para que se corresponda
+        con su nombre real.
+      shared:
+        represent_user_group:
+          represent_user_group: Represento a una comunidad energética
+          select_user_group: Selecciona una comunidad energética
+      show:
+        groups: Comunidades Energéticas
+      user:
+        actions:
+          create_user_group: Crear una comunidad energética
+          edit_user_group: Edita el perfil de la comunidad energética
+          join_user_group: Solicita unirse a la comunidad energética
+          leave_user_group: Deja la comunidad energética
+          manage_user_group: Gestionar la comunidad energética
+        fill_in_email_to_confirm_it: Por favor, introduce el correo electrónico de
+          tu comunidad energética para confirmarlo.
+      user_conversations:
+        index:
+          conversations_info: Las conversaciones son privadas. Nadie más puede verlas.
+            Se puede iniciar una conversación con cualquier participante o comunidad
+            energética registrado en la plataforma.
+  layouts:
+    decidim:
+      user_profile:
+        user_groups: Comunidades Energéticas
