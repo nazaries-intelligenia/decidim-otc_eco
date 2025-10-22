@@ -30,7 +30,7 @@ module Decidim
       end
 
       def nickname_item
-        return unless nickname.present?
+        return if nickname.blank?
 
         {
           text: "@#{nickname}",
@@ -39,7 +39,7 @@ module Decidim
       end
 
       def members_count_item
-        count = user_group.memberships.where.not(role: 'requested').count
+        count = user_group.memberships.where.not(role: "requested").count
         return if count.zero?
 
         {
