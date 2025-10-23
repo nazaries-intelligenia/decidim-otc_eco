@@ -1,0 +1,33 @@
+<% add_decidim_page_title(t("decidim.user_group_credentials.edit.title")) %>
+
+<%= render layout: "layouts/decidim/shared/layout_center" do %>
+  <div class="text-center py-10">
+    <h1 class="title-decorator inline-block text-left mb-12">
+      <%= t("decidim.user_group_credentials.edit.title") %>
+    </h1>
+  </div>
+
+  <%= decidim_form_for(@form, url: user_group_credentials_path(nickname: user_group.nickname), method: :patch) do |f| %>
+    <div class="form__wrapper">
+      <div class="field">
+        <%= f.text_field :cif,
+            label: t("decidim.user_group_credentials.edit.cif"),
+            help_text: t("decidim.user_group_credentials.edit.cif_help"),
+            placeholder: "A12345678",
+            required: true %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :datadis_password,
+            label: t("decidim.user_group_credentials.edit.password"),
+            help_text: t("decidim.user_group_credentials.edit.password_help"),
+            autocomplete: "off",
+            required: true %>
+      </div>
+    </div>
+
+    <div class="form__wrapper-block">
+      <%= f.submit t("decidim.user_group_credentials.edit.submit"), class: "button button__sm md:button__lg button__secondary" %>
+    </div>
+  <% end %>
+<% end %>
