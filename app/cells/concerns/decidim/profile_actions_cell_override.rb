@@ -26,20 +26,20 @@ module Decidim
       # Add credentials action to group editor dropdown
       def group_editor_actions_keys
         @group_editor_actions_keys ||= if can_edit_user_group_profile?
-                                        [
-                                          :edit_user_group,
-                                          :manage_user_group_users,
-                                          :manage_user_group_admins,
-                                          :invite_user,
-                                          :edit_user_group_credentials
-                                        ].tap do |keys|
-                                          keys.prepend(:resend_email_confirmation_instructions) if user_group_email_to_be_confirmed?
-                                          keys << :join_user_group if can_join_user_group?
-                                          keys << :leave_user_group if can_leave_group?
-                                        end
-                                      else
-                                        []
-                                      end
+                                         [
+                                           :edit_user_group,
+                                           :manage_user_group_users,
+                                           :manage_user_group_admins,
+                                           :invite_user,
+                                           :edit_user_group_credentials
+                                         ].tap do |keys|
+                                           keys.prepend(:resend_email_confirmation_instructions) if user_group_email_to_be_confirmed?
+                                           keys << :join_user_group if can_join_user_group?
+                                           keys << :leave_user_group if can_leave_group?
+                                         end
+                                       else
+                                         []
+                                       end
       end
 
       def action_item(key, translations_scope: "decidim.profiles.user.actions")
