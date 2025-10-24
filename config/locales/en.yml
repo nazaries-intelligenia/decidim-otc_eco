@@ -21,6 +21,18 @@ en:
         verify: "%{user_name} verified the energy community %{resource_name}"
         verify_via_csv: "%{user_name} verified the energy community %{resource_name}
           via a CSV file"
+    components:
+      debates:
+        initial_debates:
+          titles:
+            alliances_sustainability: Alliances and Sustainability Group
+            community_dynamization: Community Dynamization Group
+            community_notices: Community Notices
+            driving_group: Driving Group
+            energy_saving: Energy Saving
+            improvement_suggestions: Improvement Suggestions
+            projects_financing: Projects and Financing Group
+            steering_committee: Steering Committee
     download_your_data:
       help:
         user_groups:
@@ -197,7 +209,3 @@ en:
           conversations_info: Conversations are private. No one else can see them.
             You can start a conversation with any participant or energy community
             registered on the platform.
-  layouts:
-    decidim:
-      user_profile:
-        user_groups: Energy communities

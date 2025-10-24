@@ -23,6 +23,18 @@ es:
         verify: "%{user_name} verificó la comunidad energética %{resource_name}"
         verify_via_csv: "%{user_name} verificó la comunidad energética %{resource_name}
           a través de un archivo CSV"
+    components:
+      debates:
+        initial_debates:
+          titles:
+            alliances_sustainability: Grupo sobre Alianzas y Sostenibilidad
+            community_dynamization: Grupo sobre Dinamización de la Comunidad
+            community_notices: Avisos de la comunidad
+            driving_group: Grupo Motor
+            energy_saving: Ahorro energético
+            improvement_suggestions: Sugerencias de mejora
+            projects_financing: Grupo sobre Proyectos y Financiación
+            steering_committee: Consejo Rector
     download_your_data:
       help:
         user_groups:
