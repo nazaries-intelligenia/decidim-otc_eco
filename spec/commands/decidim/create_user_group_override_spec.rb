@@ -83,6 +83,51 @@ RSpec.describe Decidim::CreateUserGroup do
       expect(content_block.weight).to eq(1)
     end
 
+    it "creates 8 initial debates in the debates component" do
+      ug = Decidim::UserGroup.find_by(email: "group@example.com")
+      assembly = Decidim::Assembly.find_by(user_group: ug)
+      component = Decidim::Component.find_by(participatory_space: assembly, manifest_name: :debates)
+
+      debates = Decidim::Debates::Debate.where(component: component)
+      expect(debates.count).to eq(8)
+
+      # Verify all debates have the user_group as author
+      debates.each do |debate|
+        expect(debate.author).to eq(ug)
+        expect(debate.title).to be_present
+        expect(debate.start_time).to be_nil
+        expect(debate.end_time).to be_nil
+      end
+    end
+
+    it "creates debates with correct translated titles" do
+      ug = Decidim::UserGroup.find_by(email: "group@example.com")
+      assembly = Decidim::Assembly.find_by(user_group: ug)
+      component = Decidim::Component.find_by(participatory_space: assembly, manifest_name: :debates)
+
+      debate_keys = [
+        :steering_committee,
+        :community_notices,
+        :driving_group,
+        :projects_financing,
+        :community_dynamization,
+        :alliances_sustainability,
+        :improvement_suggestions,
+        :energy_saving
+      ]
+
+      debates = Decidim::Debates::Debate.where(component: component)
+
+      # Verify each specific debate key exists with correct translations
+      debate_keys.each do |key|
+        I18n.available_locales.each do |locale|
+          expected_title = I18n.t("decidim.components.debates.initial_debates.titles.#{key}", locale: locale)
+          debate_with_title = debates.find { |d| d.title[locale.to_s] == expected_title }
+          expect(debate_with_title).not_to be_nil, "Expected to find debate with title '#{expected_title}' in locale '#{locale}'"
+        end
+      end
+    end
+
     it "adds the group's users as private users to the assembly" do
       ug = Decidim::UserGroup.find_by(email: "group@example.com")
       assembly = Decidim::Assembly.find_by(user_group: ug)
