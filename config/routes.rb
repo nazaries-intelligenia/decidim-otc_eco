@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   mount Decidim::Core::Engine => "/"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # User group credentials routes
+  Decidim::Core::Engine.routes.draw do
+    scope "/profiles/:nickname" do
+      get "credentials/edit", to: "user_group_credentials#edit", as: "edit_user_group_credentials"
+      patch "credentials", to: "user_group_credentials#update", as: "user_group_credentials"
+    end
+  end
 end

@@ -5,3 +5,6 @@ Metrics/CyclomaticComplexity:
 Metrics/PerceivedComplexity:
   Exclude:
     - 'app/permissions/concerns/decidim/permissions_override.rb'
+Rails/LexicallyScopedActionFilter:
+  Exclude:
+    - 'app/controllers/concerns/decidim/profiles_controller_override.rb'

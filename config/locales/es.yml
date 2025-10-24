@@ -206,6 +206,7 @@ es:
         actions:
           create_user_group: Crear una comunidad energética
           edit_user_group: Edita el perfil de la comunidad energética
+          edit_user_group_credentials: Gestionar credenciales (CIF y contraseña)
           join_user_group: Solicita unirse a la comunidad energética
           leave_user_group: Deja la comunidad energética
           manage_user_group: Gestionar la comunidad energética
@@ -216,6 +217,20 @@ es:
           conversations_info: Las conversaciones son privadas. Nadie más puede verlas.
             Se puede iniciar una conversación con cualquier participante o comunidad
             energética registrado en la plataforma.
+    user_group_credentials:
+      edit:
+        cif: CIF
+        cif_help: El CIF debe tener el formato de una letra mayúscula seguida de 8
+          dígitos (por ejemplo, A12345678)
+        password: Contraseña
+        password_help: Contraseña para acceso a servicios externos
+        submit: Guardar credenciales
+        title: Gestionar credenciales de la comunidad energética
+      missing_credentials_warning: Es necesario configurar el CIF y la contraseña
+        de Datadis para acceder a servicios externos.
+      update:
+        error: Ha ocurrido un error al actualizar las credenciales
+        success: Las credenciales se han actualizado correctamente
   layouts:
     decidim:
       user_profile:
