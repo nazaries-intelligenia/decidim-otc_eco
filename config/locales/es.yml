@@ -218,7 +218,7 @@ es:
             Se puede iniciar una conversación con cualquier participante o comunidad
             energética registrado en la plataforma.
     user_group_credentials:
-      missing_credentials_warning: "Es necesario configurar el CIF y la contraseña de Datadis para acceder a servicios externos. %{link}"
+      missing_credentials_warning: "Es necesario configurar el CIF y la contraseña de Datadis para acceder a servicios externos."
       configure_now: Configurar ahora
       edit:
         title: Gestionar credenciales de la comunidad energética
