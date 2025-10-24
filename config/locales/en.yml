@@ -199,18 +199,20 @@ en:
             You can start a conversation with any participant or energy community
             registered on the platform.
     user_group_credentials:
-      missing_credentials_warning: "You need to configure the CIF and password to access Datadis services."
       configure_now: Configure now
       edit:
-        title: Manage energy community credentials
         cif: CIF
-        cif_help: The CIF must be formatted as a capital letter followed by 8 digits (e.g., A12345678)
+        cif_help: The CIF must be formatted as a capital letter followed by 8 digits
+          (e.g., A12345678)
         password: Password
         password_help: Password for external services access
         submit: Save credentials
+        title: Manage energy community credentials
+      missing_credentials_warning: You need to configure the CIF and password to access
+        Datadis services.
       update:
-        success: Credentials have been successfully updated
         error: There was an error updating the credentials
+        success: Credentials have been successfully updated
   layouts:
     decidim:
       user_profile:
