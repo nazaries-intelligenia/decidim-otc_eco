@@ -25,14 +25,14 @@ en:
       debates:
         initial_debates:
           titles:
-            steering_committee: Steering Committee
+            alliances_sustainability: Alliances and Sustainability Group
+            community_dynamization: Community Dynamization Group
             community_notices: Community Notices
             driving_group: Driving Group
-            projects_financing: Projects and Financing Group
-            community_dynamization: Community Dynamization Group
-            alliances_sustainability: Alliances and Sustainability Group
-            improvement_suggestions: Improvement Suggestions
             energy_saving: Energy Saving
+            improvement_suggestions: Improvement Suggestions
+            projects_financing: Projects and Financing Group
+            steering_committee: Steering Committee
     download_your_data:
       help:
         user_groups:

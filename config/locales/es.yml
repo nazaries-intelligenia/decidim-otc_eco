@@ -27,14 +27,14 @@ es:
       debates:
         initial_debates:
           titles:
-            steering_committee: Consejo Rector
+            alliances_sustainability: Grupo sobre Alianzas y Sostenibilidad
+            community_dynamization: Grupo sobre Dinamización de la Comunidad
             community_notices: Avisos de la comunidad
             driving_group: Grupo Motor
-            projects_financing: Grupo sobre Proyectos y Financiación
-            community_dynamization: Grupo sobre Dinamización de la Comunidad
-            alliances_sustainability: Grupo sobre Alianzas y Sostenibilidad
-            improvement_suggestions: Sugerencias de mejora
             energy_saving: Ahorro energético
+            improvement_suggestions: Sugerencias de mejora
+            projects_financing: Grupo sobre Proyectos y Financiación
+            steering_committee: Consejo Rector
     download_your_data:
       help:
         user_groups:
