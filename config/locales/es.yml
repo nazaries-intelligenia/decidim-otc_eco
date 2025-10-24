@@ -218,18 +218,19 @@ es:
             Se puede iniciar una conversación con cualquier participante o comunidad
             energética registrado en la plataforma.
     user_group_credentials:
-      missing_credentials_warning: "Es necesario configurar el CIF y la contraseña de Datadis para acceder a servicios externos."
-      configure_now: Configurar ahora
       edit:
-        title: Gestionar credenciales de la comunidad energética
         cif: CIF
-        cif_help: El CIF debe tener el formato de una letra mayúscula seguida de 8 dígitos (por ejemplo, A12345678)
+        cif_help: El CIF debe tener el formato de una letra mayúscula seguida de 8
+          dígitos (por ejemplo, A12345678)
         password: Contraseña
         password_help: Contraseña para acceso a servicios externos
         submit: Guardar credenciales
+        title: Gestionar credenciales de la comunidad energética
+      missing_credentials_warning: Es necesario configurar el CIF y la contraseña
+        de Datadis para acceder a servicios externos.
       update:
-        success: Las credenciales se han actualizado correctamente
         error: Ha ocurrido un error al actualizar las credenciales
+        success: Las credenciales se han actualizado correctamente
   layouts:
     decidim:
       user_profile:

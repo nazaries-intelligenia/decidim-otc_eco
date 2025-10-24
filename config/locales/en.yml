@@ -199,7 +199,6 @@ en:
             You can start a conversation with any participant or energy community
             registered on the platform.
     user_group_credentials:
-      configure_now: Configure now
       edit:
         cif: CIF
         cif_help: The CIF must be formatted as a capital letter followed by 8 digits
