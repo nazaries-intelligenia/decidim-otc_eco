@@ -9,6 +9,9 @@ RSpec.describe "User groups map display" do
   before do
     switch_to_host(organization.host)
     login_as user, scope: :user
+
+    # Disable geocoding callback for tests
+    allow_any_instance_of(Decidim::UserGroup).to receive(:geocode)
   end
 
   context "when there are no user groups" do

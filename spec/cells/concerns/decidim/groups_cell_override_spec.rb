@@ -7,6 +7,11 @@ module Decidim
     let(:organization) { create(:organization) }
     let!(:user) { create(:user, :confirmed, organization: organization) }
 
+    # Disable geocoding callback for tests
+    before do
+      allow_any_instance_of(Decidim::UserGroup).to receive(:geocode)
+    end
+
     describe "included in GroupsCell" do
       subject { cell("decidim/groups", user) }
 

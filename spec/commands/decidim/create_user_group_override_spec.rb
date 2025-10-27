@@ -30,6 +30,11 @@ RSpec.describe Decidim::CreateUserGroup do
     )
   end
 
+  # Disable geocoding callback for tests
+  before do
+    allow_any_instance_of(Decidim::UserGroup).to receive(:geocode)
+  end
+
   describe "#call (override behavior)" do
     before do
       subject.call
