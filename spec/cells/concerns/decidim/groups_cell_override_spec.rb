@@ -9,7 +9,7 @@ module Decidim
 
     # Disable geocoding callback for tests
     before do
-      allow_any_instance_of(Decidim::UserGroup).to receive(:geocode)
+      allow_any_instance_of(Decidim::UserGroup).to receive(:geocode) # rubocop:disable RSpec/AnyInstance
     end
 
     describe "included in GroupsCell" do

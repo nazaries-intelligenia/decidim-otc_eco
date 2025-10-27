@@ -11,7 +11,7 @@ RSpec.describe "User groups map display" do
     login_as user, scope: :user
 
     # Disable geocoding callback for tests
-    allow_any_instance_of(Decidim::UserGroup).to receive(:geocode)
+    allow_any_instance_of(Decidim::UserGroup).to receive(:geocode) # rubocop:disable RSpec/AnyInstance
   end
 
   context "when there are no user groups" do
