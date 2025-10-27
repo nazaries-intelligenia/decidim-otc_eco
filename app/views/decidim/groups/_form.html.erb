@@ -6,7 +6,7 @@
 
 <%= f.text_field :email, help_text: t(".email_help") %>
 
-<%= f.geocoding_field :address, help_text: t(".address_help") %>
+<%= f.geocoding_field :address, help_text: t(".address_help"), autocomplete: "street-address" %>
 
 <%= f.upload :avatar, button_class: "button button__lg button__transparent-secondary w-full" %>
 
