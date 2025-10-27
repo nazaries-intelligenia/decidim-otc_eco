@@ -11,6 +11,8 @@ checksums = [
     files: {
       "/app/permissions/decidim/permissions.rb" => "89cdeb04aca3775b876bf497ac3cc2fb",
       "/app/cells/decidim/profile_actions_cell.rb" => "58dc7248028205c01a370243fb7b6b6f",
+      "/app/cells/decidim/groups_cell.rb" => "cd5c80bf992322ced5c93da7415bdb03",
+      "/app/cells/decidim/groups/show.erb" => "9187e30d2e6ab17903f0a9929bffded4",
       "/config/locales/en.yml" => "f70e1c80e82314a99f14011b865db190",
       "/config/locales/es.yml" => "139f08e385b564b8d92610b0fa053e95",
       "/app/models/decidim/user_group.rb" => "bfd3dad56e66adf9d8dbf1a9d9c4fcd4",
