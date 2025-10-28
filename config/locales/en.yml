@@ -14,6 +14,10 @@ en:
         one: Energy community
         other: Energy communities
   decidim:
+    content_blocks:
+      user_groups_map:
+        name: Energy Communities map
+        title: Energy Communities
     admin_log:
       user_group:
         reject: "%{user_name} rejected the %{resource_name} energy community verification"
