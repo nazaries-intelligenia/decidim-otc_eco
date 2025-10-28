@@ -29,3 +29,7 @@ ignore_unused:
   - 'decidim.profiles.user.fill_in_email_to_confirm_it'
   - 'decidim.profiles.user_conversations.index.conversations_info'
   - 'layouts.decidim.user_profile.user_groups'
+
+ignore_missing:
+  - 'decidim.groups.form.document_number_help'
+  - 'decidim.groups.form.phone_help'

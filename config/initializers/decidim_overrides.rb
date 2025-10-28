@@ -11,4 +11,7 @@ Rails.application.config.to_prepare do
   Decidim::LeaveUserGroup.include(Decidim::LeaveUserGroupOverride)
   Decidim::RemoveUserFromGroup.include(Decidim::RemoveUserFromGroupOverride)
   Decidim::UserGroupForm.include(Decidim::UserGroupFormOverride)
+  Decidim::GroupsCell.include(Decidim::GroupsCellOverride)
+  Decidim::UserGroupPresenter.include(Decidim::UserGroupPresenterOverride)
+  Decidim::UpdateUserGroup.include(Decidim::UpdateUserGroupOverride)
 end

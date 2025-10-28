@@ -133,6 +133,7 @@ en:
         edit_user_group: Edit energy community
         update_user_group: Update energy community
       form:
+        address_help: 'Address: used by Geocoder to find the location'
         email_help: Email of your organization, association, collective, energy community,
           etc.
         fill_in_for_verification: 'Fill in these fields if you want your energy community
@@ -153,6 +154,9 @@ en:
       members:
         accept_or_reject_join_requests: 'The following participants have requested
           to join this energy community. Accept or reject their requests:'
+      members_count:
+        one: "%{count} member"
+        other: "%{count} members"
       new:
         create_user_group: Create energy community
         new_user_group: New energy community

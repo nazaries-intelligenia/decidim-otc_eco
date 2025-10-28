@@ -1,0 +1,20 @@
+<%= cell "decidim/user_group_pending_invitations_list", model %>
+
+<% if validation_messages.present? %>
+  <% validation_messages.each do |validation| %>
+    <%= cell("decidim/announcement", validation) %>
+  <% end %>
+<% else %>
+  <% if display_map? %>
+    <div class="user-groups-list__map">
+      <%= cell "decidim/user_groups/user_groups_map", geocoded_user_groups, metadata_card: "decidim/user_groups/user_group_card_metadata" %>
+    </div>
+  <% end %>
+
+  <div class="profile__user-grid">
+    <% user_groups.each do |user_group| %>
+      <%= card_for user_group %>
+    <% end %>
+  </div>
+  <%= decidim_paginate user_groups %>
+<% end %>
