@@ -35,6 +35,7 @@ en:
             steering_committee: Steering Committee
     content_blocks:
       user_groups_map:
+        name: Energy Communities map
         title: Energy Communities
     download_your_data:
       help:
