@@ -17,7 +17,6 @@ es:
   decidim:
     content_blocks:
       user_groups_map:
-        name: Mapa de Comunidades Energéticas
         title: Comunidades Energéticas
     admin_log:
       user_group:

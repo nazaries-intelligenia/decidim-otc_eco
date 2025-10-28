@@ -14,10 +14,6 @@ en:
         one: Energy community
         other: Energy communities
   decidim:
-    content_blocks:
-      user_groups_map:
-        name: Energy Communities map
-        title: Energy Communities
     admin_log:
       user_group:
         reject: "%{user_name} rejected the %{resource_name} energy community verification"
@@ -37,6 +33,9 @@ en:
             improvement_suggestions: Improvement Suggestions
             projects_financing: Projects and Financing Group
             steering_committee: Steering Committee
+    content_blocks:
+      user_groups_map:
+        title: Energy Communities
     download_your_data:
       help:
         user_groups:
