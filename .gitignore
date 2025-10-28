@@ -56,3 +56,6 @@ tailwind.config.js
 
 # Ignore rspec failures
 .rspec-failures
+
+# Ignore Byebug command history file
+.byebug_history
