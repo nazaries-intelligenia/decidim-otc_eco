@@ -14,7 +14,7 @@ module Decidim
         data.select(&:geocoded_and_valid?).map do |user_group|
           user_group.slice(:latitude, :longitude, :address)
                     .merge(
-                      title: user_group.presenter.title,
+                      title: user_group.name,
                       link: profile_path(user_group.nickname),
                       items: cell(options[:metadata_card], user_group).send(:items_for_map).to_json
                     )
