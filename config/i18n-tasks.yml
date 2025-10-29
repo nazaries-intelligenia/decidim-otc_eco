@@ -12,6 +12,7 @@ ignore_unused:
   - 'activemodel.models.decidim/user_group_created_event'
   - 'activerecord.models.decidim/user_group.*'
   - 'decidim.admin_log.user_group.*'
+  - 'decidim.content_blocks.user_groups_map.name'
   - 'decidim.download_your_data.help.user_groups.*'
   - 'decidim.events.groups.*'
   - 'decidim.group_admins.actions.*'

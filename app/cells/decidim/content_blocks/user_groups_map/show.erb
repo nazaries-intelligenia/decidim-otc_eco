@@ -1,0 +1,10 @@
+  <section class="content-block" id="homepage-user-groups-map">
+
+    <div class="content-block__title">
+      <h2 class="h2 decorator"><%= t("decidim.content_blocks.user_groups_map.title") %></h2>
+    </div>
+
+    <div class="user-groups-list__map">
+      <%= cell "decidim/user_groups/user_groups_map", geocoded_user_groups, metadata_card: "decidim/user_groups/user_group_card_metadata" %>
+    </div>
+  </section>
