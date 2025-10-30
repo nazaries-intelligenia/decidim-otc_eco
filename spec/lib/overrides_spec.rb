@@ -23,7 +23,13 @@ checksums = [
       "/app/commands/decidim/leave_user_group.rb" => "c48bb5f45bdbf4966171dc4f0f6921db",
       "/app/commands/decidim/remove_user_from_group.rb" => "ed09c455dce565355bf4d64456e03f2b",
       "/app/views/decidim/groups/_form.html.erb" => "c0fe379ba854c18a5c6c2f32f146bf38",
-      "/app/forms/decidim/user_group_form.rb" => "841f9cc427698a42764873504589151e"
+      "/app/forms/decidim/user_group_form.rb" => "841f9cc427698a42764873504589151e",
+      "/app/forms/decidim/registration_form.rb" => "c58cadf42e94144d878ec0a98dcb13aa",
+      "/app/commands/decidim/create_registration.rb" => "c2fafd313dbe16624e3ef07584e946cd",
+      "/app/controllers/decidim/devise/registrations_controller.rb" => "329ff82cc840b677a706048b6360c04a",
+      "/app/forms/decidim/account_form.rb" => "5872f17965919c0754a453ac4eb614df",
+      "/app/commands/decidim/update_account.rb" => "f6c1fbdfd2e2c38bd9b6a43b335df975",
+      "/app/controllers/decidim/account_controller.rb" => "9d7158b4724b19de16f08b5b1cdc5c12"
     }
   },
   {

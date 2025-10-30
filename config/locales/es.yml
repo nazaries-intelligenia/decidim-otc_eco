@@ -1,6 +1,9 @@
 ---
 es:
   activemodel:
+    attributes:
+      user:
+        user_type: Tipo de usuario
     models:
       decidim/demoted_membership: Ya no eres una administradora de comunidad energética
       decidim/invited_to_group_event: Invitada a la comunidad energética
@@ -236,3 +239,7 @@ es:
     decidim:
       user_profile:
         user_groups: Comunidades Energéticas
+  user_types:
+    individual: Persona física
+    local_entity: Entidad local
+    pyme: PYME
