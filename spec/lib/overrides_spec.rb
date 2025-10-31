@@ -13,6 +13,8 @@ checksums = [
       "/app/cells/decidim/profile_actions_cell.rb" => "58dc7248028205c01a370243fb7b6b6f",
       "/app/cells/decidim/groups_cell.rb" => "cd5c80bf992322ced5c93da7415bdb03",
       "/app/cells/decidim/groups/show.erb" => "9187e30d2e6ab17903f0a9929bffded4",
+      "/app/cells/decidim/profile/details.erb" => "90393f226130f3c1d74cb8e6d06db856",
+      "/app/cells/decidim/profile_cell.rb" => "9b2e631644de00d33581e87dbc56de41",
       "/config/locales/en.yml" => "f70e1c80e82314a99f14011b865db190",
       "/config/locales/es.yml" => "139f08e385b564b8d92610b0fa053e95",
       "/app/models/decidim/user_group.rb" => "bfd3dad56e66adf9d8dbf1a9d9c4fcd4",
@@ -23,7 +25,8 @@ checksums = [
       "/app/commands/decidim/leave_user_group.rb" => "c48bb5f45bdbf4966171dc4f0f6921db",
       "/app/commands/decidim/remove_user_from_group.rb" => "ed09c455dce565355bf4d64456e03f2b",
       "/app/views/decidim/groups/_form.html.erb" => "c0fe379ba854c18a5c6c2f32f146bf38",
-      "/app/forms/decidim/user_group_form.rb" => "841f9cc427698a42764873504589151e"
+      "/app/forms/decidim/user_group_form.rb" => "841f9cc427698a42764873504589151e",
+      "/app/controllers/decidim/profiles_controller.rb" => "2be44695ea2e19d1e33328daf40114a6"
     }
   },
   {

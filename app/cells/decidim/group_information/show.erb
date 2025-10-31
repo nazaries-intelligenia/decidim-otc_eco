@@ -1,0 +1,12 @@
+<div class="profile__group-information">
+  <div class="mb-6">
+    <h2 class="h4"><%= t("decidim.profiles.show.about") %></h2>
+    <% if about.present? %>
+      <div class="prose">
+        <%= about %>
+      </div>
+    <% else %>
+      <p class="text-gray-2"><%= t("decidim.profiles.show.no_information") %></p>
+    <% end %>
+  </div>
+</div>

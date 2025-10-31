@@ -13,4 +13,6 @@ Rails.application.config.to_prepare do
   Decidim::UserGroupForm.include(Decidim::UserGroupFormOverride)
   Decidim::GroupsCell.include(Decidim::GroupsCellOverride)
   Decidim::UpdateUserGroup.include(Decidim::UpdateUserGroupOverride)
+  Decidim::ProfileCell.include(Decidim::ProfileCellOverride)
+  Decidim::ProfilesController.include(Decidim::ProfilesControllerOverride)
 end
