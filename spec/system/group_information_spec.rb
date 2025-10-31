@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "Group information tab", type: :system do
+RSpec.describe "Group information tab" do
   let(:organization) { create(:organization) }
   let(:admin_user) { create(:user, :admin, :confirmed, organization: organization) }
   let(:group) do
@@ -31,4 +31,3 @@ RSpec.describe "Group information tab", type: :system do
     end
   end
 end
-

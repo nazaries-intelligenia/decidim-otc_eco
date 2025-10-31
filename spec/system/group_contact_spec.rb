@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "Group contact tab", type: :system do
+RSpec.describe "Group contact tab" do
   let(:organization) { create(:organization) }
   let(:admin_user) { create(:user, :admin, :confirmed, organization: organization) }
 

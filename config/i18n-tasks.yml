@@ -26,6 +26,8 @@ ignore_unused:
   - 'decidim.profiles.default_officialization_text_for_user_groups'
   - 'decidim.profiles.shared.represent_user_group.*'
   - 'decidim.profiles.show.groups'
+  - 'decidim.profiles.show.information'
+  - 'decidim.profiles.show.contact'
   - 'decidim.profiles.user.actions.*'
   - 'decidim.profiles.user.fill_in_email_to_confirm_it'
   - 'decidim.profiles.user_conversations.index.conversations_info'
