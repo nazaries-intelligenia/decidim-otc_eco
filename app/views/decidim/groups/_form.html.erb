@@ -41,7 +41,7 @@
 
 <%= f.text_field :financial_support, help_text: t(".financial_support_help") %>
 
-<%= f.text_area :about, rows: 5, help_text: t(".ec_description_help") %>
+<%= f.editor :about, toolbar: :full, help_text: t(".ec_description_help") %>
 
 <%= f.text_field :project_website, placeholder: "https://", help_text: t(".project_website_help") %>
 
