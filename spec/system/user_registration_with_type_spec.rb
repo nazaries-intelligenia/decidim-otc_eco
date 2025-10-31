@@ -19,12 +19,16 @@ RSpec.describe "User registration with user type" do
     check "registration_user_tos_agreement"
     check "registration_user_newsletter"
 
-    click_button "Create an account"
+    within "form.new_user" do
+      click_on "Create an account"
+    end
 
     # Close newsletter modal if present
-    within "#newsletterModal", visible: false do
-      click_button "Check and continue"
-    end if page.has_css?("#newsletterModal", visible: :all)
+    if page.has_css?("#newsletterModal", visible: :all)
+      within "#newsletterModal", visible: false do
+        click_on "Check and continue"
+      end
+    end
 
     expect(page).to have_content("A message with a confirmation link")
 
@@ -41,7 +45,9 @@ RSpec.describe "User registration with user type" do
     fill_in "registration_user_password", with: "decidim123456789"
     check "registration_user_tos_agreement"
 
-    click_button "Create an account"
+    within "form.new_user" do
+      click_on "Create an account"
+    end
 
     expect(page).to have_content("There are errors on the form")
     expect(page).to have_content("There is an error in this field")
@@ -65,12 +71,16 @@ RSpec.describe "User registration with user type" do
       check "registration_user_tos_agreement"
       check "registration_user_newsletter"
 
-      click_button "Create an account"
+      within "form.new_user" do
+        click_on "Create an account"
+      end
 
       # Close newsletter modal if present
-      within "#newsletterModal", visible: false do
-        click_button "Check and continue"
-      end if page.has_css?("#newsletterModal", visible: :all)
+      if page.has_css?("#newsletterModal", visible: :all)
+        within "#newsletterModal", visible: false do
+          click_on "Check and continue"
+        end
+      end
 
       expect(page).to have_content("A message with a confirmation link")
 

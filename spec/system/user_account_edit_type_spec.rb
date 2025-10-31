@@ -25,7 +25,7 @@ RSpec.describe "User account edit user type" do
     expect(page).to have_select("User type", selected: "Individual")
 
     select "SME", from: "User type"
-    click_button "Update account"
+    click_on "Update account"
 
     expect(page).to have_content("Your account was successfully updated")
 
@@ -38,7 +38,7 @@ RSpec.describe "User account edit user type" do
 
     # Change from Individual to Local entity
     select "Local entity", from: "User type"
-    click_button "Update account"
+    click_on "Update account"
 
     expect(page).to have_content("Your account was successfully updated")
     user.reload
@@ -46,7 +46,7 @@ RSpec.describe "User account edit user type" do
 
     # Change from Local entity to SME
     select "SME", from: "User type"
-    click_button "Update account"
+    click_on "Update account"
 
     expect(page).to have_content("Your account was successfully updated")
     user.reload
@@ -59,7 +59,7 @@ RSpec.describe "User account edit user type" do
     visit decidim.account_path
 
     select "Local entity", from: "User type"
-    click_button "Update account"
+    click_on "Update account"
 
     user.reload
     expect(user.extended_data["user_type"]).to eq("local_entity")

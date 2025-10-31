@@ -4,7 +4,7 @@ module Decidim
   module RegistrationFormOverride
     extend ActiveSupport::Concern
 
-    USER_TYPES = %w[individual pyme local_entity].freeze
+    USER_TYPES = %w(individual pyme local_entity).freeze
 
     included do
       attribute :user_type, String

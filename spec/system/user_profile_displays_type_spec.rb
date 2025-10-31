@@ -66,7 +66,7 @@ RSpec.describe "User profile displays user type" do
       visit decidim.profile_path(user.nickname)
 
       expect(page).to have_content("Jane Doe")
-      expect(page).not_to have_css(".profile__details-user-type")
+      expect(page).to have_no_css(".profile__details-user-type")
     end
   end
 
@@ -89,7 +89,7 @@ RSpec.describe "User profile displays user type" do
       visit decidim.profile_path(user_group.nickname)
 
       expect(page).to have_content("Energy Community")
-      expect(page).not_to have_css(".profile__details-user-type")
+      expect(page).to have_no_css(".profile__details-user-type")
     end
   end
 end

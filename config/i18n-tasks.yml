@@ -34,3 +34,10 @@ ignore_unused:
 ignore_missing:
   - 'decidim.groups.form.document_number_help'
   - 'decidim.groups.form.phone_help'
+  - 'decidim.account.email_change.*'
+  - 'decidim.account.show.*'
+  - 'decidim.devise.registrations.new.*'
+  - 'decidim.devise.shared.placeholder_email'
+  - 'layouts.decidim.user_menu.profile'
+  - 'devise.shared.links.didn_t_receive_confirmation_instructions'
+  - 'devise.shared.links.didn_t_receive_unlock_instructions'
