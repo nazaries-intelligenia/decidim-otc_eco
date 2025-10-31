@@ -19,4 +19,5 @@ Rails.application.config.to_prepare do
   Decidim::AccountForm.include(Decidim::AccountFormOverride)
   Decidim::UpdateAccount.include(Decidim::UpdateAccountOverride)
   Decidim::AccountController.include(Decidim::AccountControllerOverride)
+  Decidim::ProfileCell.include(Decidim::ProfileCellOverride)
 end
