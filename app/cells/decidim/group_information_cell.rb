@@ -11,7 +11,7 @@ module Decidim
     end
 
     def about
-      decidim_html_escape translated_attribute(user_group.about).to_s
+      decidim_rich_text translated_attribute(user_group.about).to_s
     end
   end
 end
