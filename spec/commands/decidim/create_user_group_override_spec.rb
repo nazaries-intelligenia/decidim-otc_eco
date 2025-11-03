@@ -22,11 +22,20 @@ RSpec.describe Decidim::CreateUserGroup do
       about: "About the group",
       avatar: nil,
       phone: "+34123456",
-      document_number: "ID-123",
       current_user: user,
       address: "Street 123, 12345 City, Country",
       latitude: 1.234567,
-      longitude: 2.345678
+      longitude: 2.345678,
+      ec_agents: "EC Agents",
+      installed_power: "100",
+      legal_form: "Cooperative",
+      creation_date: Time.zone.today,
+      assistance: "Assistance",
+      action_types: "Thermal Renewables",
+      financial_support: "20",
+      project_website: "https://example.com",
+      contact_person: "John Doe",
+      privacy_policy_accepted: true
     )
   end
 
@@ -40,14 +49,23 @@ RSpec.describe Decidim::CreateUserGroup do
       subject.call
     end
 
-    it "creates a user group with extended_data including verified_at and rejected_at nil" do
+    it "creates a user group with extended_data" do
       ug = Decidim::UserGroup.find_by(email: "group@example.com")
       expect(ug).not_to be_nil
       expect(ug.extended_data).to be_present
       expect(ug.extended_data["phone"]).to eq("+34123456")
-      expect(ug.extended_data["document_number"]).to eq("ID-123")
       expect(ug.extended_data["verified_at"]).not_to be_nil
       expect(ug.extended_data["rejected_at"]).to be_nil
+      expect(ug.extended_data["ec_agents"]).to eq("EC Agents")
+      expect(ug.extended_data["installed_power"]).to eq("100")
+      expect(ug.extended_data["legal_form"]).to eq("Cooperative")
+      expect(ug.extended_data["creation_date"]).to eq(form.creation_date.to_s)
+      expect(ug.extended_data["assistance"]).to eq("Assistance")
+      expect(ug.extended_data["action_types"]).to eq("Thermal Renewables")
+      expect(ug.extended_data["financial_support"]).to eq("20")
+      expect(ug.extended_data["project_website"]).to eq("https://example.com")
+      expect(ug.extended_data["contact_person"]).to eq("John Doe")
+      expect(ug.extended_data["privacy_policy_accepted"]).to be true
     end
 
     it "creates a membership for the current user as creator" do
