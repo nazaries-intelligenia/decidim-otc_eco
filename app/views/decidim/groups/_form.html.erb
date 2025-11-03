@@ -1,17 +1,63 @@
 <%= form_required_explanation %>
 
-<%= f.text_field :name, help_text: t(".name_help") %>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.geocoding_field :address, autocomplete: "off" %>
+  </div>
+</div>
+
+<strong><%= t(".address_help") %></strong>
 
 <%= f.text_field :nickname, help_text: t(".nickname_help") %>
 
-<%= f.text_field :email, help_text: t(".email_help") %>
+<%= f.upload :avatar, button_class: "button button__lg button__transparent-secondary w-full", help_text: t(".avatar_help") %>
 
-<%= f.geocoding_field :address, help_text: t(".address_help"), autocomplete: "street-address" %>
+<%= f.text_area :ec_agents, rows: 5, help_text: t(".ec_agents_help") %>
 
-<%= f.upload :avatar, button_class: "button button__lg button__transparent-secondary w-full" %>
+<%= f.text_field :installed_power, help_text: t(".installed_power_help") %>
 
-<%= f.text_area :about, rows: 5 %>
+<%= f.text_field :legal_form, help_text: t(".legal_form_help") %>
 
-<%= f.text_field :document_number, help_text: t(".document_number_help") %>
+<%= f.date_field :creation_date, help_text: t(".creation_date_help") %>
 
-<%= f.text_field :phone, help_text: t(".phone_help") %>
+<%= f.text_field :assistance, help_text: t(".assistance_help") %>
+
+<%= f.select :action_types,
+    [
+      [t(".action_types.aggregation"), "aggregation"],
+      [t(".action_types.energy_consulting"), "energy_consulting"],
+      [t(".action_types.storage"), "storage"],
+      [t(".action_types.thermal_renewables"), "thermal_renewables"],
+      [t(".action_types.mobility"), "mobility"],
+      [t(".action_types.training"), "training"],
+      [t(".action_types.rehabilitation"), "rehabilitation"],
+      [t(".action_types.others"), "others"]
+    ],
+    { prompt: t(".action_types_prompt") },
+    help_text: t(".action_types_help") %>
+
+<%= f.text_field :financial_support, help_text: t(".financial_support_help") %>
+
+<%= f.editor :about, toolbar: :full, help_text: t(".ec_description_help") %>
+
+<%= f.text_field :project_website, placeholder: "https://", help_text: t(".project_website_help") %>
+
+<hr/>
+
+<%= f.text_field :contact_person, help_text: t(".contact_person_help") %>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.text_field :phone %>
+  </div>
+</div>
+
+<div class="mt-4">
+  <%= f.check_box :privacy_policy_accepted, label: t(".privacy_policy_accepted_label") %>
+</div>

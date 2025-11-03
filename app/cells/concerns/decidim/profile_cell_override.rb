@@ -19,6 +19,15 @@ module Decidim
         conversations: { icon: "question-answer-line", path: :profile_conversations_path }
       }.freeze)
 
+      def user_type_label
+        return nil if user_group? || profile_holder.extended_data.blank?
+
+        type = profile_holder.extended_data["user_type"]
+        return nil if type.blank?
+
+        I18n.t("user_types.#{type}", default: type)
+      end
+
       private
 
       def group_tabs

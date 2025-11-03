@@ -1,8 +1,13 @@
 <div class="profile__details">
   <h1 class="h3">
-    <%= presented_profile.name %>
+    <b><%= presented_profile.name %></b>
     <span class="sr-only"><%= tab_items.find { |tab_item| is_active_link?(tab_item[:path]) }&.dig(:text) %> (<%= presented_profile.name %>)</span>
   </h1>
+  <% if user_type_label.present? %>
+    <div class="profile__details-user-type pb-4">
+      <span class="font-semibold"><%= user_type_label %></span>
+    </div>
+  <% end %>
   <div class="profile__details-data">
     <% details_items.each do |detail| %>
       <div class="profile__details-item">
@@ -18,4 +23,5 @@
     <% end %>
   </div>
 </div>
+<p class="profile__description"><%= description %></p>
 <%= render_hook(:user_profile_bottom) %>

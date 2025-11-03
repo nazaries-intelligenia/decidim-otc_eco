@@ -1,0 +1,50 @@
+<% if validation_messages.present? %>
+  <% validation_messages.each do |validation| %>
+    <%= cell("decidim/announcement", validation) %>
+  <% end %>
+<% else %>
+  <%# Display individual members %>
+  <% if individual_members.any? %>
+    <div class="mb-8">
+      <h3 class="h5 mb-4">
+        <%= t("user_types.individual") %> (<%= individual_members.count %>)
+      </h3>
+
+      <div class="profile__user-grid">
+        <% individual_members.each do |membership| %>
+          <%= card_for membership %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <%# Display local entity members %>
+  <% if local_entity_members.any? %>
+    <div class="mb-8">
+      <h3 class="h5 mb-4">
+        <%= t("user_types.local_entity") %> (<%= local_entity_members.count %>)
+      </h3>
+
+      <div class="profile__user-grid">
+        <% local_entity_members.each do |membership| %>
+          <%= card_for membership %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <%# Display PYME members %>
+  <% if pyme_members.any? %>
+    <div class="mb-8">
+      <h3 class="h5 mb-4">
+        <%= t("user_types.pyme") %> (<%= pyme_members.count %>)
+      </h3>
+
+      <div class="profile__user-grid">
+        <% pyme_members.each do |membership| %>
+          <%= card_for membership %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

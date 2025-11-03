@@ -10,6 +10,7 @@ ignore_unused:
   - 'activemodel.models.decidim/promoted_to_admin_event'
   - 'activemodel.models.decidim/removed_from_group'
   - 'activemodel.models.decidim/user_group_created_event'
+  - 'activemodel.attributes.group.*'
   - 'activerecord.models.decidim/user_group.*'
   - 'decidim.admin_log.user_group.*'
   - 'decidim.content_blocks.user_groups_map.name'
@@ -36,3 +37,10 @@ ignore_unused:
 ignore_missing:
   - 'decidim.groups.form.document_number_help'
   - 'decidim.groups.form.phone_help'
+  - 'decidim.account.email_change.*'
+  - 'decidim.account.show.*'
+  - 'decidim.devise.registrations.new.*'
+  - 'decidim.devise.shared.placeholder_email'
+  - 'layouts.decidim.user_menu.profile'
+  - 'devise.shared.links.didn_t_receive_confirmation_instructions'
+  - 'devise.shared.links.didn_t_receive_unlock_instructions'
