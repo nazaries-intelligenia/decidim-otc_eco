@@ -13,4 +13,5 @@ Rails.application.config.to_prepare do
   Decidim::UserGroupForm.include(Decidim::UserGroupFormOverride)
   Decidim::GroupsCell.include(Decidim::GroupsCellOverride)
   Decidim::UpdateUserGroup.include(Decidim::UpdateUserGroupOverride)
+  Decidim::UserGroupMembership.include(Decidim::UserGroupMembershipOverride)
 end
