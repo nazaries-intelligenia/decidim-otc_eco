@@ -2,8 +2,6 @@
 en:
   activemodel:
     attributes:
-      user:
-        user_type: User type
       group:
         about: Description of the Energy Community
         action_types: Types of actions
@@ -16,6 +14,8 @@ en:
         legal_form: Legal form
         name: Name of the EC
         project_website: Project website
+      user:
+        user_type: User type
     models:
       decidim/demoted_membership: No longer an energy community admin
       decidim/invited_to_group_event: Invited to energy community
