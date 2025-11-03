@@ -10,6 +10,7 @@ ignore_unused:
   - 'activemodel.models.decidim/promoted_to_admin_event'
   - 'activemodel.models.decidim/removed_from_group'
   - 'activemodel.models.decidim/user_group_created_event'
+  - 'activemodel.attributes.group.*'
   - 'activerecord.models.decidim/user_group.*'
   - 'decidim.admin_log.user_group.*'
   - 'decidim.content_blocks.user_groups_map.name'

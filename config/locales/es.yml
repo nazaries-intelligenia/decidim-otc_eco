@@ -4,6 +4,20 @@ es:
     attributes:
       user:
         user_type: Tipo de usuario
+      group:
+        about: Descripción de la Comunidad Energética
+        action_types: Tipología de las actuaciones
+        address: Localidad
+        assistance: Asistencias
+        avatar: Marca o identidad
+        contact_person: Persona de contacto
+        creation_date: Fecha de creación
+        ec_agents: Agentes de la CE
+        financial_support: Sostenimiento económico
+        installed_power: Potencia instalada
+        legal_form: Forma jurídica
+        name: Nombre de la CE
+        project_website: Web del proyecto
     models:
       decidim/demoted_membership: Ya no eres una administradora de comunidad energética
       decidim/invited_to_group_event: Invitada a la comunidad energética
@@ -18,10 +32,6 @@ es:
         one: Comunidad Energética
         other: Comunidades Energéticas
   decidim:
-    content_blocks:
-      user_groups_map:
-        name: Mapa de Comunidades Energéticas
-        title: Comunidades Energéticas
     admin_log:
       user_group:
         reject: "%{user_name} rechazó la verificación de la comunidad energética %{resource_name}"
@@ -42,6 +52,10 @@ es:
             improvement_suggestions: Sugerencias de mejora
             projects_financing: Grupo sobre Proyectos y Financiación
             steering_committee: Consejo Rector
+    content_blocks:
+      user_groups_map:
+        name: Mapa de Comunidades Energéticas
+        title: Comunidades Energéticas
     download_your_data:
       help:
         user_groups:
@@ -155,14 +169,40 @@ es:
         edit_user_group: Editar la comunidad energética
         update_user_group: Actualizar la comunidad energética
       form:
-        email_help: Correo electrónico de tu organización, asociación, colectivo,
-          comunidad energética, etc.
-        fill_in_for_verification: 'Rellena estos campos si deseas que tu comunidad
-          energética sea verificada:'
-        name_help: Nombre de tu organización, asociación, colectivo, comunidad energética,
-          etc.
-        nickname_help: Alias de tu organización, asociación, colectivo, comunidad
-          energética, etc. No uses espacios ni tildes.
+        action_types:
+          aggregation: Agregación
+          energy_consulting: Asesoramiento energético
+          mobility: Movilidad
+          others: Otros
+          rehabilitation: Rehabilitación energética
+          storage: Almacenamiento – Gestión de la demanda
+          thermal_renewables: Renovables Térmicas
+          training: Formación
+        action_types_help: Tipo principal de acción de la comunidad energética
+        action_types_prompt: Selecciona el tipo de acción
+        address_help: 'Localidad: utilizada por el geocodificador para encontrar la
+          ubicación.'
+        assistance_help: Indica que oficinas (OTC) u otros entes han asistido en la
+          creación de la Comunidad Energética
+        avatar_help: "¿Tiene tu CE un logotipo? Si no, comparte con nosotros una imagen
+          que os represente."
+        contact_person_help: Nombre completo
+        creation_date_help: 'Formato: dd/mm/aaaa'
+        ec_agents_help: Indica las entidades promotoras de tu Comunidad Energética
+          (Nº de personas físicas, PYMES y Entidades Locales Socias).
+        ec_description_help: Historia de la CE, datos de interés, impacto en el municipio,
+          etc…
+        financial_support_help: Porcentaje de ingresos y procedencia, ayudas públicas,
+          entidad financiera, préstamos colectivos…
+        installed_power_help: Indica los kWp (potencia pico) y el número de instalaciones
+        legal_form_help: 'Por ejemplo: Asociación, Cooperativa con secciones, etc…'
+        nickname_help: Alias para tu comunidad energética. No uses espacios ni tildes.
+        phone_help: Número de teléfono de contacto
+        privacy_policy_accepted_label: He leído la <a href="https://otcecogranada.es/politica-privacidad/"
+          target="_blank" rel="noopener noreferrer" class="underline text-blue-600
+          hover:text-blue-800">política de privacidad</a> y acepto el tratamiento
+          de mis datos personales para la finalidad anteriormente descrita
+        project_website_help: Sitio web del proyecto (URL completa)
       join:
         error: Se ha producido un error al unirte a la comunidad energética.
         success: La solicitud para formar parte se ha enviado correctamente. Una administradora
