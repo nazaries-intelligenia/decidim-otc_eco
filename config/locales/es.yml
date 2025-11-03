@@ -2,6 +2,8 @@
 es:
   activemodel:
     attributes:
+      user:
+        user_type: Tipo de usuario
       group:
         about: Descripción de la Comunidad Energética
         action_types: Tipología de las actuaciones
@@ -277,3 +279,7 @@ es:
     decidim:
       user_profile:
         user_groups: Comunidades Energéticas
+  user_types:
+    individual: Persona física
+    local_entity: Entidad local
+    pyme: PYME

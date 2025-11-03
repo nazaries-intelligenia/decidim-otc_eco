@@ -14,6 +14,8 @@ en:
         legal_form: Legal form
         name: Name of the EC
         project_website: Project website
+      user:
+        user_type: User type
     models:
       decidim/demoted_membership: No longer an energy community admin
       decidim/invited_to_group_event: Invited to energy community
@@ -254,3 +256,7 @@ en:
           conversations_info: Conversations are private. No one else can see them.
             You can start a conversation with any participant or energy community
             registered on the platform.
+  user_types:
+    individual: Individual
+    local_entity: Local entity
+    pyme: SME
