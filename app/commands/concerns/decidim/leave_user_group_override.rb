@@ -15,10 +15,11 @@ module Decidim
       end
 
       def remove_from_assembly_private_users
-        return if user_group.assembly.blank?
+        assembly = Decidim::Assembly.find_by(user_group: user_group)
+        return if assembly.blank?
 
         Decidim::ParticipatorySpacePrivateUser
-          .find_by(user: user, privatable_to: user_group.assembly)
+          .find_by(user: user, privatable_to: assembly)
           &.destroy
       end
     end

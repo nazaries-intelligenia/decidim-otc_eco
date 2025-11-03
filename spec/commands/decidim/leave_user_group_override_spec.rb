@@ -61,5 +61,45 @@ RSpec.describe Decidim::LeaveUserGroup do
         expect(Decidim::ParticipatorySpacePrivateUser.exists?(user: user)).to be false
       end
     end
+
+    context "when user is an admin and leaves the group" do
+      it "removes the membership, the participatory private user, and the assembly admin role" do
+        # create admin membership for the user that will leave
+        Decidim::UserGroupMembership.create!(user: user, user_group: user_group, role: :admin)
+
+        # create another admin so the leaving user is not the last admin
+        another_admin = create(:user, :confirmed, organization: organization)
+        Decidim::UserGroupMembership.create!(user: another_admin, user_group: user_group, role: :admin)
+
+        # create an assembly for the user_group
+        assembly = Decidim::Assembly.create!(
+          title: { "en" => "Assembly" },
+          subtitle: { "en" => "Subtitle" },
+          short_description: { "en" => "Short" },
+          description: { "en" => "Description" },
+          slug: "agroup-admin",
+          private_space: true,
+          is_transparent: false,
+          user_group: user_group,
+          decidim_organization_id: organization.id
+        )
+
+        # create a participatory private user
+        Decidim::ParticipatorySpacePrivateUser.create!(user: user, privatable_to: assembly, published: true)
+
+        # create an assembly admin role
+        Decidim::AssemblyUserRole.create!(user: user, assembly: assembly, role: "admin")
+
+        expect(Decidim::UserGroupMembership.exists?(user: user, user_group: user_group)).to be true
+        expect(Decidim::ParticipatorySpacePrivateUser.exists?(user: user, privatable_to: assembly)).to be true
+        expect(Decidim::AssemblyUserRole.exists?(user: user, assembly: assembly, role: "admin")).to be true
+
+        subject.call
+
+        expect(Decidim::UserGroupMembership.exists?(user: user, user_group: user_group)).to be false
+        expect(Decidim::ParticipatorySpacePrivateUser.exists?(user: user, privatable_to: assembly)).to be false
+        expect(Decidim::AssemblyUserRole.exists?(user: user, assembly: assembly, role: "admin")).to be false
+      end
+    end
   end
 end
