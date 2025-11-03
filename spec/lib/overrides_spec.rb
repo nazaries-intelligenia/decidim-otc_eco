@@ -27,11 +27,15 @@ checksums = [
       "/app/forms/decidim/registration_form.rb" => "c58cadf42e94144d878ec0a98dcb13aa",
       "/app/commands/decidim/create_registration.rb" => "c2fafd313dbe16624e3ef07584e946cd",
       "/app/controllers/decidim/devise/registrations_controller.rb" => "329ff82cc840b677a706048b6360c04a",
+      "/app/views/decidim/devise/registrations/new.html.erb" => "56884184f7f1582828a77fbeff2bb546",
       "/app/forms/decidim/account_form.rb" => "5872f17965919c0754a453ac4eb614df",
       "/app/commands/decidim/update_account.rb" => "f6c1fbdfd2e2c38bd9b6a43b335df975",
       "/app/controllers/decidim/account_controller.rb" => "9d7158b4724b19de16f08b5b1cdc5c12",
+      "/app/views/decidim/account/show.html.erb" => "f13218e2358a2d611996c2a197c0de25",
       "/app/cells/decidim/profile_cell.rb" => "9b2e631644de00d33581e87dbc56de41",
-      "/app/cells/decidim/members_cell.rb" => "c9302615479a7f43b03e9788ddb78d86"
+      "/app/cells/decidim/profile/details.erb" => "90393f226130f3c1d74cb8e6d06db856",
+      "/app/cells/decidim/members_cell.rb" => "c9302615479a7f43b03e9788ddb78d86",
+      "/app/cells/decidim/members/show.erb" => "03274469cc9a9156488c006453868367"
     }
   },
   {
