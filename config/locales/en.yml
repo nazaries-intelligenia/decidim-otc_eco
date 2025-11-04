@@ -1,6 +1,21 @@
 ---
 en:
   activemodel:
+    attributes:
+      group:
+        about: Description of the Energy Community
+        action_types: Types of actions
+        assistance: Assistance
+        contact_person: Contact person
+        creation_date: Creation date
+        ec_agents: EC Agents
+        financial_support: Financial support
+        installed_power: Installed power
+        legal_form: Legal form
+        name: Name of the EC
+        project_website: Project website
+      user:
+        user_type: User type
     models:
       decidim/demoted_membership: No longer an energy community admin
       decidim/invited_to_group_event: Invited to energy community
@@ -137,15 +152,39 @@ en:
         edit_user_group: Edit energy community
         update_user_group: Update energy community
       form:
-        address_help: 'Address: used by Geocoder to find the location'
-        email_help: Email of your organization, association, collective, energy community,
-          etc.
-        fill_in_for_verification: 'Fill in these fields if you want your energy community
-          to be verified:'
-        name_help: Name of your organization, association, collective, energy community,
-          etc.
-        nickname_help: Nickname of your organization, association, collective, energy
-          community, etc. Do not use spaces nor accents.
+        action_types:
+          aggregation: Aggregation
+          energy_consulting: Energy Consulting
+          mobility: Mobility
+          others: Others
+          rehabilitation: Energy Rehabilitation
+          storage: Storage – Demand Management
+          thermal_renewables: Thermal Renewables
+          training: Training
+        action_types_help: Main type of action of the energy community
+        action_types_prompt: Select the action type
+        address_help: 'Location: used by Geocoder to find the location'
+        assistance_help: Indicate which offices (OTC) or other entities have assisted
+          in the creation of the Energy Community
+        avatar_help: Does your CE have a logo? If not, share an image that represents
+          you with us.
+        contact_person_help: Name of the main contact person
+        creation_date_help: 'Formato: dd/mm/yyyy'
+        ec_agents_help: Indicate the promoting entities of your Energy Community (Number
+          of natural persons, SMEs and Local Partner Entities).
+        ec_description_help: History of the EC, interesting facts, impact on the municipality,
+          etc…
+        financial_support_help: Percentage of income and source, public aid, financial
+          institution, group loans…
+        installed_power_help: Indicate the kWp (peak power) and the number of installations
+        legal_form_help: 'For example: Association, Cooperative with sections, etc…'
+        nickname_help: Nickname of your energy community. Do not use spaces nor accents.
+        phone_help: Contact phone number
+        privacy_policy_accepted_label: I have read the <a href="https://otcecogranada.es/politica-privacidad/"
+          target="_blank" rel="noopener noreferrer" class="underline text-blue-600
+          hover:text-blue-800">privacy policy</a> and I accept the processing of my
+          personal data for the purpose described above.
+        project_website_help: Project website (full URL)
       join:
         error: There was a problem joining the energy community.
         success: Join request successfully created. An admin will review your request
@@ -202,7 +241,15 @@ en:
           represent_user_group: I represent an energy community
           select_user_group: Select an energy community
       show:
+        contact: Contact
+        contact_information: Contact information
+        contact_person: Contact person
+        email: Email
         groups: Energy communities
+        information: Information
+        no_contact_information: No contact information available.
+        no_information: No information available.
+        phone: Phone
       user:
         actions:
           create_user_group: Create energy community
@@ -217,3 +264,7 @@ en:
           conversations_info: Conversations are private. No one else can see them.
             You can start a conversation with any participant or energy community
             registered on the platform.
+  user_types:
+    individual: Individual
+    local_entity: Local entity
+    pyme: SME

@@ -38,8 +38,18 @@ module Decidim
           latitude: form.latitude,
           longitude: form.longitude,
           extended_data: {
+            ec_agents: form.ec_agents,
+            installed_power: form.installed_power,
+            legal_form: form.legal_form,
+            creation_date: form.creation_date,
+            assistance: form.assistance,
+            action_types: form.action_types,
+            financial_support: form.financial_support,
+            project_website: form.project_website,
+            contact_person: form.contact_person,
             phone: form.phone,
-            document_number: form.document_number,
+            privacy_policy_accepted: form.privacy_policy_accepted,
+            privacy_policy_accepted_at: Time.current,
             rejected_at: nil,
             verified_at: Time.current
           }
