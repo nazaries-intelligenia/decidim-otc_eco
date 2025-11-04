@@ -1,0 +1,55 @@
+<div class="profile__group-contact">
+  <div class="space-y-6">
+    <div>
+      <h2 class="h4 mb-4"><%= t("decidim.profiles.show.contact_information") %></h2>
+
+      <div class="space-y-4">
+        <% if contact_person.present? %>
+          <div class="flex items-start gap-3">
+            <%= icon "user-line", class: "w-5 h-5 text-gray-2 mt-0.5" %>
+            <div>
+              <div class="font-semibold text-sm text-gray-2 mb-1">
+                <%= t("decidim.profiles.show.contact_person") %>
+              </div>
+              <div>
+                <%= contact_person %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+        <% if email.present? %>
+          <div class="flex items-start gap-3">
+            <%= icon "mail-line", class: "w-5 h-5 text-gray-2 mt-0.5" %>
+            <div>
+              <div class="font-semibold text-sm text-gray-2 mb-1">
+                <%= t("decidim.profiles.show.email") %>
+              </div>
+              <div>
+                <%= mail_to email, email %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+        <% if phone.present? %>
+          <div class="flex items-start gap-3">
+            <%= icon "phone-line", class: "w-5 h-5 text-gray-2 mt-0.5" %>
+            <div>
+              <div class="font-semibold text-sm text-gray-2 mb-1">
+                <%= t("decidim.profiles.show.phone") %>
+              </div>
+              <div>
+                <%= link_to phone, "tel:#{phone}" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+        <% if email.blank? && phone.blank? && contact_person.blank? %>
+          <p class="text-gray-2"><%= t("decidim.profiles.show.no_contact_information") %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

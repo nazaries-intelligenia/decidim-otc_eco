@@ -241,7 +241,15 @@ en:
           represent_user_group: I represent an energy community
           select_user_group: Select an energy community
       show:
+        contact: Contact
+        contact_information: Contact information
+        contact_person: Contact person
+        email: Email
         groups: Energy communities
+        information: Information
+        no_contact_information: No contact information available.
+        no_information: No information available.
+        phone: Phone
       user:
         actions:
           create_user_group: Create energy community

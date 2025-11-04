@@ -1,0 +1,9 @@
+<div class="profile__group-information">
+  <div class="mb-6">
+    <% if about.present? %>
+      <%= about.html_safe %>
+    <% else %>
+      <p class="text-gray-2"><%= t("decidim.profiles.show.no_information") %></p>
+    <% end %>
+  </div>
+</div>
