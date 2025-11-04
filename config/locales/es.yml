@@ -261,7 +261,6 @@ es:
           select_user_group: Selecciona una comunidad energética
       show:
         groups: Comunidades Energéticas
-        about: Descripción
         contact: Contacto
         contact_information: Información de contacto
         contact_person: Persona de contacto

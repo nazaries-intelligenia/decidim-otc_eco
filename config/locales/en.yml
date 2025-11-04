@@ -241,7 +241,6 @@ en:
           represent_user_group: I represent an energy community
           select_user_group: Select an energy community
       show:
-        about: About
         contact: Contact
         contact_information: Contact information
         contact_person: Contact person
