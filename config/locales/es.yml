@@ -162,6 +162,8 @@ es:
           energética.
         success: Participante eliminada correctamente de la comunidad energética.
     groups:
+      actions:
+        are_you_sure: ¿Estás seguro de que quieres abandonar esta comunidad energética?
       create:
         error: Se ha producido un error al crear la comunidad energética.
         success: Comunidad Energética creada correctamente.

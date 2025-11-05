@@ -17,6 +17,25 @@ module Decidim
           keys << :leave_user_group if can_leave_group?
         end
       end
+
+      # Override action_item to fix translation loading for leave_user_group
+      def action_item(key, translations_scope: "decidim.profiles.user.actions")
+        return if self.class::ACTIONS_ITEMS[key].blank?
+
+        values = self.class::ACTIONS_ITEMS[key].dup
+        values[:options] = values.delete(:options) || {}
+        return values if values.has_key?(:cell)
+
+        # Fix: Load the confirm translation dynamically for leave_user_group
+        if key == :leave_user_group
+          values[:options][:method] = :delete
+          values[:options][:data] = { confirm: I18n.t("decidim.groups.actions.are_you_sure") }
+        end
+
+        values[:path] = send(values[:path], profile_holder.nickname) if values[:path].present?
+        values[:text] = t(key, scope: translations_scope)
+        values
+      end
     end
   end
 end
