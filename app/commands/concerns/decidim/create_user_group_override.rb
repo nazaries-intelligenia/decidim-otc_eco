@@ -69,6 +69,8 @@ module Decidim
           private_space: true,
           is_transparent: false
         )
+
+        sync_admin_roles_with_assembly
       end
 
       def create_main_data_content_block
@@ -135,6 +137,16 @@ module Decidim
         slug.gsub!(/[^A-Za-z0-9-]/, "")
 
         slug
+      end
+
+      def sync_admin_roles_with_assembly
+        @user_group.memberships.where(role: "admin").find_each do |membership|
+          Decidim::AssemblyUserRole.create!(
+            user: membership.user,
+            assembly: @assembly,
+            role: "admin"
+          )
+        end
       end
     end
   end

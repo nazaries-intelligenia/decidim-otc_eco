@@ -18,6 +18,7 @@ checksums = [
       "/config/locales/en.yml" => "f70e1c80e82314a99f14011b865db190",
       "/config/locales/es.yml" => "139f08e385b564b8d92610b0fa053e95",
       "/app/models/decidim/user_group.rb" => "bfd3dad56e66adf9d8dbf1a9d9c4fcd4",
+      "/app/models/decidim/user_group_membership.rb" => "b601fe6090cebdf978d53ef22528e4a9",
       "/app/commands/decidim/create_user_group.rb" => "3dbf8247f6b949d3b700dc5cdfb54d9c",
       "/app/commands/decidim/update_user_group.rb" => "d714c339efc3ea9ff064246f6bc8ef83",
       "/app/commands/decidim/accept_group_invitation.rb" => "843946937cb0f7104f7e672c70f45dd8",
