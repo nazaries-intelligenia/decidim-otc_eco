@@ -145,6 +145,8 @@ en:
         error: There was a problem removing this participant from the energy community.
         success: Participant successfully removed from the energy community.
     groups:
+      actions:
+        are_you_sure: Are you sure you want to leave this energy community?
       create:
         error: There was a problem creating the energy community.
         success: Energy community successfully created.
