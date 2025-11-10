@@ -27,3 +27,52 @@
 .datepicker__help-text-container {
   display: none;
 }
+
+.mini-footer {
+  background-color: white !important;
+}
+
+.mini-footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.mini-footer__logos-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: nowrap;
+}
+
+.mini-footer__logo--dipgra {
+  height: 110px;
+  width: auto;
+
+  @media (max-width: 767px) {
+    height: 70px;
+  }
+}
+
+.mini-footer__logo--energia {
+  height: 60px;
+  width: auto;
+
+  @media (max-width: 767px) {
+    height: 45px;
+  }
+}
+
+.mini-footer__logo-gobierno {
+  display: flex;
+  justify-content: center;
+}
+
+.mini-footer__logo-gobierno img {
+  max-height: 80px;
+  height: auto;
+}

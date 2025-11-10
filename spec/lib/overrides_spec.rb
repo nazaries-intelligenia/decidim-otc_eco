@@ -37,7 +37,8 @@ checksums = [
       "/app/commands/decidim/update_account.rb" => "f6c1fbdfd2e2c38bd9b6a43b335df975",
       "/app/views/decidim/account/show.html.erb" => "f13218e2358a2d611996c2a197c0de25",
       "/app/cells/decidim/members_cell.rb" => "c9302615479a7f43b03e9788ddb78d86",
-      "/app/cells/decidim/members/show.erb" => "03274469cc9a9156488c006453868367"
+      "/app/cells/decidim/members/show.erb" => "03274469cc9a9156488c006453868367",
+      "/app/views/layouts/decidim/footer/_mini.html.erb" => "ccead2f5f20557ea4db1501de943f82b"
     }
   },
   {
