@@ -1,26 +1,63 @@
-version: '3'
 services:
-  app:
-    image: decidim/decidim:0.30.1
+  db:
+    image: postgres:16.11
     volumes:
-      - .:/app
-      - bundle:/usr/local/bundle
-      - node_modules:/app/node_modules
+      - db:/var/lib/postgresql/data
     environment:
-      - PORT=3000
-      - DATABASE_HOST=pg
-      - DATABASE_USERNAME=postgres
-      - RAILS_ENV=development
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'password'
+      POSTGRES_DB: 'myapp_development'
     ports:
-      - 3000:3000
-    links:
-      - pg
-    command: bundle exec puma
-  pg:
-    image: postgres
+      - "5432:5432"
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/dev/Dockerfile
+    environment:
+      # Database configuration
+      DATABASE_USERNAME: 'postgres'
+      DATABASE_PASSWORD: 'password'
+      DATABASE_PORT: '5432'
+      DATABASE_HOST: 'db'
+      DATABASE_NAME: 'myapp_development'
+
+      # Rails environment
+      RAILS_ENV: 'development'
+      RACK_ENV: 'development'
+
+      # SMTP configuration (MailHog for development)
+      SMTP_HOST: 'mailhog'
+      SMTP_PORT: '1025'
+      SMTP_USERNAME: ''
+      SMTP_PASSWORD: ''
+      SMTP_EMAIL_FROM: 'noreply@example.com'
+
+      # Application URL
+      BASE_URL: 'http://localhost:3000'
+
+      # Add your custom environment variables here
+      # Example: API_KEY: ${API_KEY} 
+    command: web
     volumes:
-      - pg-data:/var/lib/postgresql/data
+      - gems:/usr/local/bundle:delegated
+      - .:/app
+    ports:
+      - "3000:3000"
+      - "1234:1234"
+    depends_on:
+      - db
+    tty: true
+    stdin_open: true
+
+  mailhog:
+    image: mailhog/mailhog
+    logging:
+      driver: 'none'
+    ports:
+      - 1025:1025 # SMTP server
+      - 8025:8025 # Web UI
+
 volumes:
-  node_modules: {}
-  bundle: {}
-  pg-data: {}
+  db: {}
+  gems: {}
