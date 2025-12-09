@@ -37,7 +37,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./compose/production/django/Dockerfile
+          file: ./docker/production/Dockerfile
           push: true
           tags: |
             ${{vars.DOCKERHUB_REPOSITORY}}:${{ vars.IMAGE_TAG }}
@@ -77,7 +77,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./compose/production/django/Dockerfile
+          file: ./docker/production/Dockerfile
           push: true
           tags: |
             ${{vars.DOCKERHUB_REPOSITORY}}:${{ vars.IMAGE_TAG }}
