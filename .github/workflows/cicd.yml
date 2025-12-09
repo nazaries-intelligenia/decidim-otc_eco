@@ -40,7 +40,7 @@ jobs:
           file: ./compose/production/django/Dockerfile
           push: true
           tags: |
-            ${{vars.DOCKERHUB_REPOSITORY}}:${{ vars.IMAGE_TAG_STAGING }}
+            ${{vars.DOCKERHUB_REPOSITORY}}:${{ vars.IMAGE_TAG }}
             ${{vars.DOCKERHUB_REPOSITORY}}:${{ github.run_number }}_${{ steps.vars.outputs.sha_short }}
 
       - name: Lanza webhook de Portainer 🔁
@@ -80,7 +80,7 @@ jobs:
           file: ./compose/production/django/Dockerfile
           push: true
           tags: |
-            ${{vars.DOCKERHUB_REPOSITORY}}:${{ vars.IMAGE_TAG_PROD }}
+            ${{vars.DOCKERHUB_REPOSITORY}}:${{ vars.IMAGE_TAG }}
             ${{vars.DOCKERHUB_REPOSITORY}}:${{ github.run_number }}_${{ steps.vars.outputs.sha_short }}
 
       - name: Lanza webhook de Portainer 🔁
