@@ -1,0 +1,74 @@
+services:
+  db:
+    image: postgres:16.11
+    volumes:
+      - db_server:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME:-postgres}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:-password}
+      POSTGRES_DB: ${DATABASE_NAME:-decidim_otc_eco_production}
+    ports:
+      - "5432:5432"
+
+  # Mailhog for local email testing
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - "1025:1025"  # SMTP server
+      - "8025:8025"  # Web UI
+
+  app: &rubyapp
+    build:
+      context: .
+      dockerfile: docker/production/Dockerfile
+    command: web
+    environment: &rubyenv
+      # Rails
+      RAILS_ENV: ${RAILS_ENV:-production}
+      APPLICATION_STAGE: ${APPLICATION_STAGE:-production-test}
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE:-random_string_CHANGE_IT_IN_PRODUCTION__293iuhdasdy6a76e82be3q}
+      RAILS_LOG_TO_STDOUT: 1
+
+      # Database
+      DATABASE_USERNAME: ${DATABASE_USERNAME:-postgres}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD:-password}
+      DATABASE_NAME: ${DATABASE_NAME:-decidim_otc_eco_production}
+      DATABASE_PORT: ${DATABASE_PORT:-5432}
+      DATABASE_HOST: ${DATABASE_HOST:-db}
+
+      # Application URL
+      BASE_URL: ${BASE_URL:-http://localhost:3000}
+
+      # Email - using Mailhog for local testing
+      SMTP_ADDRESS: ${SMTP_HOST:-mailhog}
+      SMTP_PORT: ${SMTP_PORT:-1025}
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      DECIDIM_MAILER_SENDER: ${DECIDIM_MAILER_SENDER:-noreply@example.com}
+
+      # Redis
+      REDIS_URL: "redis://redis"
+
+      # Add your custom environment variables here
+      # Example: API_KEY: ${API_KEY}
+      DECIDIM_FORCE_SSL: False
+
+    volumes:
+      - app_storage:/app/storage
+    ports:
+      - "${WEB_PORT:-3000}:3000"
+    depends_on:
+      - db
+      - mailhog
+
+  sidekiq:
+    <<: *rubyapp
+    command: sidekiq
+    ports: []
+
+  redis:
+    image: redis:6
+
+volumes:
+  db_server: {}
+  app_storage: {}

@@ -86,4 +86,5 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  #url: <%= ENV['DATABASE_URL'] %>
+  database: decidim_otc_eco_production
