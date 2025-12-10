@@ -44,5 +44,5 @@ jobs:
       - name: Lanza webhook de Portainer 🔁
         if: success()
         run: |
-          curl -X POST ${{ vars.PORTAINER_WEBHOOK_BACKEND }}
-          curl -X POST ${{ vars.PORTAINER_WEBHOOK_SIDEKIQ }}
+          curl -X POST ${{ secrets.PORTAINER_WEBHOOK_BACKEND }}
+          curl -X POST ${{ secrets.PORTAINER_WEBHOOK_SIDEKIQ }}
