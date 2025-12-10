@@ -40,12 +40,11 @@ services:
       BASE_URL: ${BASE_URL:-http://localhost:3000}
 
       # Email - using Mailhog for local testing
-      SMTP_HOST: ${SMTP_HOST:-mailhog}
+      SMTP_ADDRESS: ${SMTP_HOST:-mailhog}
       SMTP_PORT: ${SMTP_PORT:-1025}
       SMTP_USERNAME: ${SMTP_USERNAME:-}
       SMTP_PASSWORD: ${SMTP_PASSWORD:-}
-      SMTP_EMAIL_FROM: ${SMTP_EMAIL_FROM:-noreply@example.com}
-      EMAIL_SUBJECT_PREFIX: ${EMAIL_SUBJECT_PREFIX:-[MyApp Test]}
+      DECIDIM_MAILER_SENDER: ${DECIDIM_MAILER_SENDER:-noreply@example.com}
 
       # Redis
       REDIS_URL: "redis://redis"

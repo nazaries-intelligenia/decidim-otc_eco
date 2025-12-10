@@ -27,11 +27,11 @@ services:
       RACK_ENV: 'development'
 
       # SMTP configuration (MailHog for development)
-      SMTP_HOST: 'mailhog'
+      SMTP_ADDRESS§: 'mailhog'
       SMTP_PORT: '1025'
       SMTP_USERNAME: ''
       SMTP_PASSWORD: ''
-      SMTP_EMAIL_FROM: 'noreply@example.com'
+      DECIDIM_MAILER_SENDER: 'noreply@example.com'
 
       # Application URL
       BASE_URL: 'http://localhost:3000'
