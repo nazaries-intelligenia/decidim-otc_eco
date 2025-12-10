@@ -41,7 +41,7 @@ jobs:
             ${{ vars.DOCKERHUB_REPOSITORY }}:${{ vars.IMAGE_TAG }}
             ${{ vars.DOCKERHUB_REPOSITORY }}:${{ github.run_number }}_${{ steps.vars.outputs.sha_short }}
 
-      - name: Lanza webhook de Portainer 🔁
+      - name: Launch Portainer webhook 🔁
         if: success()
         run: |
           curl -X POST ${{ secrets.PORTAINER_WEBHOOK_BACKEND }}
