@@ -14,7 +14,6 @@ RUN apt-get update -qq && apt-get install -y \
     build-essential \
     imagemagick \
     libicu-dev \
-    imagemagick \ 
     wkhtmltopdf \
     && rm -rf /var/lib/apt/lists/*
 
