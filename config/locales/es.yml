@@ -218,6 +218,9 @@ es:
       members:
         accept_or_reject_join_requests: 'Las siguientes participantes han solicitado
           unirse a esta comunidad energética. Acepta o rechaza sus solicitudes:'
+      members_count:
+        one: "%{count} miembro"
+        other: "%{count} miembros"
       new:
         create_user_group: Crear una comunidad energética
         new_user_group: Nueva comunidad energética
