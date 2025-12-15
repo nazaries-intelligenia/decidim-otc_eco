@@ -167,6 +167,7 @@ en:
           training: Training
         action_types_help: Main type of action of the energy community
         action_types_prompt: Select the action type
+        add_installation: Add installation
         address_help: 'Location: used by Geocoder to find the location'
         avatar_help: Does your CE have a logo? If not, share an image that represents
           you with us.
@@ -178,14 +179,12 @@ en:
           etc…
         financial_support_help: Percentage of income and source, public aid, financial
           institution, group loans…
-        installations_title: EC INSTALLATIONS
-        has_installations_label: "Does the energy community already have active installations?"
-        add_installation: Add installation
-        remove_installation: Remove installation
+        has_installations_label: Does the energy community already have active installations?
         installation_location_label: Location
-        installation_location_placeholder: "E.g: Street, Number"
+        installation_location_placeholder: 'E.g: Street, Number'
         installation_power_label: Peak Power (kWp)
-        installation_power_placeholder: "E.g: 10"
+        installation_power_placeholder: 'E.g: 10'
+        installations_title: EC INSTALLATIONS
         legal_form_help: 'For example: Association, Cooperative with sections, etc…'
         nickname_help: Nickname of your energy community. Do not use spaces nor accents.
         phone_help: Contact phone number
@@ -194,6 +193,7 @@ en:
           hover:text-blue-800">privacy policy</a> and I accept the processing of my
           personal data for the purpose described above.
         project_website_help: Project website (full URL)
+        remove_installation: Remove installation
       join:
         error: There was a problem joining the energy community.
         success: Join request successfully created. An admin will review your request

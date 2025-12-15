@@ -23,7 +23,11 @@ RSpec.describe Decidim::UpdateUserGroup do
       longitude: 0.654321,
       extended_data: {
         ec_agents: "Old EC Agents",
-        installed_power: "50",
+        has_installations: true,
+        installations: [
+          { "location" => "Old Building A", "power" => "25" },
+          { "location" => "Old Building B", "power" => "25" }
+        ],
         legal_form: "Association",
         creation_date: 1.year.ago.to_date.to_s,
         action_types: "Solar",
@@ -53,7 +57,11 @@ RSpec.describe Decidim::UpdateUserGroup do
       latitude: 1.234567,
       longitude: 2.345678,
       ec_agents: "New EC Agents",
-      installed_power: "200",
+      has_installations: true,
+      installations: [
+        { "location" => "New Building A", "power" => "100" },
+        { "location" => "New Building B", "power" => "100" }
+      ],
       legal_form: "Cooperative",
       creation_date: Time.zone.today,
       action_types: "Wind Renewables",
@@ -86,7 +94,13 @@ RSpec.describe Decidim::UpdateUserGroup do
       expect(user_group.extended_data).to be_present
       expect(user_group.extended_data["phone"]).to eq("+34987654321")
       expect(user_group.extended_data["ec_agents"]).to eq("New EC Agents")
-      expect(user_group.extended_data["installed_power"]).to eq("200")
+      expect(user_group.extended_data["has_installations"]).to be true
+      expect(user_group.extended_data["installations"]).to be_an(Array)
+      expect(user_group.extended_data["installations"].length).to eq(2)
+      expect(user_group.extended_data["installations"][0]["location"]).to eq("New Building A")
+      expect(user_group.extended_data["installations"][0]["power"]).to eq("100")
+      expect(user_group.extended_data["installations"][1]["location"]).to eq("New Building B")
+      expect(user_group.extended_data["installations"][1]["power"]).to eq("100")
       expect(user_group.extended_data["legal_form"]).to eq("Cooperative")
       expect(user_group.extended_data["creation_date"]).to eq(Time.zone.today.to_s)
       expect(user_group.extended_data["action_types"]).to eq("Wind Renewables")
@@ -118,7 +132,11 @@ RSpec.describe Decidim::UpdateUserGroup do
           latitude: 1.234567,
           longitude: 2.345678,
           ec_agents: "New EC Agents",
-          installed_power: "200",
+          has_installations: true,
+          installations: [
+            { "location" => "New Building A", "power" => "100" },
+            { "location" => "New Building B", "power" => "100" }
+          ],
           legal_form: "Cooperative",
           creation_date: Time.zone.today,
           action_types: "Wind Renewables",
