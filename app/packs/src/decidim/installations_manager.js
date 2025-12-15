@@ -13,6 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
   let installations = [];
   let installationCounter = 0;
 
+  // Obtener traducciones de los data attributes
+  const i18n = {
+    locationLabel: installationsContainer.dataset.locationLabel || 'Ubicación',
+    locationPlaceholder: installationsContainer.dataset.locationPlaceholder || 'Ej: Edificio A, Tejado Principal',
+    powerLabel: installationsContainer.dataset.powerLabel || 'Potencia Pico (kWp)',
+    powerPlaceholder: installationsContainer.dataset.powerPlaceholder || 'Ej: 10',
+    removeBtnText: installationsContainer.dataset.removeBtnText || 'Eliminar instalación'
+  };
+
   // Función para escapar HTML
   function escapeHtml(text) {
     if (!text) return '';
@@ -58,19 +67,19 @@ document.addEventListener('DOMContentLoaded', function() {
     installationDiv.innerHTML = `
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">
         <div>
-          <label class="text-sm font-medium">Ubicación</label>
+          <label class="text-sm font-medium">${escapeHtml(i18n.locationLabel)}</label>
           <input type="text" 
                  class="installation-location form-control" 
                  value="${locationValue}" 
-                 placeholder="Ej: Edificio A, Tejado Principal"
+                 placeholder="${escapeHtml(i18n.locationPlaceholder)}"
                  required>
         </div>
         <div>
-          <label class="text-sm font-medium">Potencia Pico (kWp)</label>
+          <label class="text-sm font-medium">${escapeHtml(i18n.powerLabel)}</label>
           <input type="number" 
                  class="installation-power form-control" 
                  value="${powerValue}" 
-                 placeholder="Ej: 50"
+                 placeholder="${escapeHtml(i18n.powerPlaceholder)}"
                  step="0.01"
                  min="0"
                  required>
@@ -79,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <button type="button" 
                   class="remove-installation-btn button button__sm button__text-secondary w-full"
                   data-installation-id="${installationId}">
-            Eliminar instalación
+            ${escapeHtml(i18n.removeBtnText)}
           </button>
         </div>
       </div>

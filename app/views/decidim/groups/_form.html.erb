@@ -24,7 +24,13 @@
     <%= f.check_box :has_installations, label: t(".has_installations_label") %>
   </div>
 
-  <div id="installations-container" style="display: none;">
+  <div id="installations-container"
+       style="display: none;"
+       data-location-label="<%= t('.installation_location_label') %>"
+       data-location-placeholder="<%= t('.installation_location_placeholder') %>"
+       data-power-label="<%= t('.installation_power_label') %>"
+       data-power-placeholder="<%= t('.installation_power_placeholder') %>"
+       data-remove-btn-text="<%= t('.remove_installation') %>">
     <div id="installations-list">
       <!-- Las instalaciones se agregarán aquí dinámicamente -->
     </div>

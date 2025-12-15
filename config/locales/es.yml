@@ -199,6 +199,11 @@ es:
         installations_title: INSTALACIONES DE LA CCEE
         has_installations_label: "¿Posee la comunidad energética ya instalaciones activas?"
         add_installation: Añadir instalación
+        remove_installation: Eliminar instalación
+        installation_location_label: Ubicación
+        installation_location_placeholder: "Ej: Calle, Número"
+        installation_power_label: Potencia Pico (kWp)
+        installation_power_placeholder: "Ej: 10"
         legal_form_help: 'Por ejemplo: Asociación, Cooperativa con secciones, etc…'
         nickname_help: Alias para tu comunidad energética. No uses espacios ni tildes.
         phone_help: Número de teléfono de contacto
