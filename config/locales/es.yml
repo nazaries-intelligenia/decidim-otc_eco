@@ -2,22 +2,22 @@
 es:
   activemodel:
     attributes:
-      user:
-        user_type: Tipo de usuario
       group:
         about: Descripción de la Comunidad Energética
         action_types: Tipología de las actuaciones
         address: Localidad
-        assistance: Asistencias
         avatar: Marca o identidad
         contact_person: Persona de contacto
         creation_date: Fecha de creación
         ec_agents: Agentes de la CE
         financial_support: Sostenimiento económico
-        installed_power: Potencia instalada
+        has_installations: "¿Posee instalaciones activas?"
+        installations: Instalaciones
         legal_form: Forma jurídica
         name: Nombre de la CE
         project_website: Web del proyecto
+      user:
+        user_type: Tipo de usuario
     models:
       decidim/demoted_membership: Ya no eres una administradora de comunidad energética
       decidim/invited_to_group_event: Invitada a la comunidad energética
@@ -163,7 +163,7 @@ es:
         success: Participante eliminada correctamente de la comunidad energética.
     groups:
       actions:
-        are_you_sure: ¿Estás seguro de que quieres abandonar esta comunidad energética?
+        are_you_sure: "¿Estás seguro de que quieres abandonar esta comunidad energética?"
       create:
         error: Se ha producido un error al crear la comunidad energética.
         success: Comunidad Energética creada correctamente.
@@ -173,19 +173,20 @@ es:
       form:
         action_types:
           aggregation: Agregación
+          collective_self-consumption: Autoconsumo colectivo
           energy_consulting: Asesoramiento energético
           mobility: Movilidad
           others: Otros
           rehabilitation: Rehabilitación energética
+          renewable_energy_production: Producción de energías renovables
           storage: Almacenamiento – Gestión de la demanda
           thermal_renewables: Renovables Térmicas
           training: Formación
         action_types_help: Tipo principal de acción de la comunidad energética
         action_types_prompt: Selecciona el tipo de acción
+        add_installation: Añadir instalación
         address_help: 'Localidad: utilizada por el geocodificador para encontrar la
           ubicación.'
-        assistance_help: Indica que oficinas (OTC) u otros entes han asistido en la
-          creación de la Comunidad Energética
         avatar_help: "¿Tiene tu CE un logotipo? Si no, comparte con nosotros una imagen
           que os represente."
         contact_person_help: Nombre completo
@@ -196,7 +197,13 @@ es:
           etc…
         financial_support_help: Porcentaje de ingresos y procedencia, ayudas públicas,
           entidad financiera, préstamos colectivos…
-        installed_power_help: Indica los kWp (potencia pico) y el número de instalaciones
+        has_installations_label: "¿Posee la comunidad energética ya instalaciones
+          activas?"
+        installation_location_label: Ubicación
+        installation_location_placeholder: 'Ej: Calle, Número'
+        installation_power_label: Potencia Pico (kWp)
+        installation_power_placeholder: 'Ej: 10'
+        installations_title: INSTALACIONES DE LA CCEE
         legal_form_help: 'Por ejemplo: Asociación, Cooperativa con secciones, etc…'
         nickname_help: Alias para tu comunidad energética. No uses espacios ni tildes.
         phone_help: Número de teléfono de contacto
@@ -205,6 +212,7 @@ es:
           hover:text-blue-800">política de privacidad</a> y acepto el tratamiento
           de mis datos personales para la finalidad anteriormente descrita
         project_website_help: Sitio web del proyecto (URL completa)
+        remove_installation: Eliminar instalación
       join:
         error: Se ha producido un error al unirte a la comunidad energética.
         success: La solicitud para formar parte se ha enviado correctamente. Una administradora
@@ -265,11 +273,11 @@ es:
           represent_user_group: Represento a una comunidad energética
           select_user_group: Selecciona una comunidad energética
       show:
-        groups: Comunidades Energéticas
         contact: Contacto
         contact_information: Información de contacto
         contact_person: Persona de contacto
         email: Email
+        groups: Comunidades Energéticas
         information: Información
         no_contact_information: No hay información de contacto disponible.
         no_information: No hay información disponible.

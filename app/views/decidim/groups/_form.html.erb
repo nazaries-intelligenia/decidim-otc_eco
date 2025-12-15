@@ -6,6 +6,8 @@
   </div>
   <div>
     <%= f.geocoding_field :address, autocomplete: "off" %>
+    <%= f.hidden_field :latitude %>
+    <%= f.hidden_field :longitude %>
   </div>
 </div>
 
@@ -17,16 +19,48 @@
 
 <%= f.text_area :ec_agents, rows: 5, help_text: t(".ec_agents_help") %>
 
-<%= f.text_field :installed_power, help_text: t(".installed_power_help") %>
+<div class="mb-4">
+  <h3 class="text-lg font-semibold mb-2"><%= t(".installations_title") %></h3>
+
+  <div class="mb-4">
+    <%= f.check_box :has_installations, label: t(".has_installations_label") %>
+  </div>
+
+  <div id="installations-container"
+       style="display: none;"
+       data-location-label="<%= t('.installation_location_label') %>"
+       data-location-placeholder="<%= t('.installation_location_placeholder') %>"
+       data-power-label="<%= t('.installation_power_label') %>"
+       data-power-placeholder="<%= t('.installation_power_placeholder') %>"
+       data-remove-btn-text="<%= t('.remove_installation') %>">
+    <div id="installations-list">
+      <!-- The list will be populated by JS -->
+    </div>
+
+    <button type="button" id="add-installation-btn" class="button button__sm button__secondary mt-2">
+      <%= t(".add_installation") %>
+    </button>
+  </div>
+
+  <%
+    installations_obj = f.object.installations
+    installations_value = if installations_obj.present?
+      installations_obj.is_a?(String) ? installations_obj : installations_obj.to_json
+    else
+      ""
+    end
+  %>
+  <%= f.hidden_field :installations, value: installations_value, id: "installations-data" %>
+</div>
 
 <%= f.text_field :legal_form, help_text: t(".legal_form_help") %>
 
 <%= f.date_field :creation_date, help_text: t(".creation_date_help") %>
 
-<%= f.text_field :assistance, help_text: t(".assistance_help") %>
-
 <%= f.select :action_types,
     [
+      [t(".action_types.collective_self-consumption"), "collective_self-consumption"],
+      [t(".action_types.renewable_energy_production"), "renewable_energy_production"],
       [t(".action_types.aggregation"), "aggregation"],
       [t(".action_types.energy_consulting"), "energy_consulting"],
       [t(".action_types.storage"), "storage"],

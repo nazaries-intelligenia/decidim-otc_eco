@@ -27,10 +27,13 @@ RSpec.describe Decidim::CreateUserGroup do
       latitude: 1.234567,
       longitude: 2.345678,
       ec_agents: "EC Agents",
-      installed_power: "100",
+      has_installations: true,
+      installations: [
+        { "location" => "Building A, Main Roof", "power" => "50" },
+        { "location" => "Building B, Secondary Roof", "power" => "50" }
+      ],
       legal_form: "Cooperative",
       creation_date: Time.zone.today,
-      assistance: "Assistance",
       action_types: "Thermal Renewables",
       financial_support: "20",
       project_website: "https://example.com",
@@ -57,10 +60,15 @@ RSpec.describe Decidim::CreateUserGroup do
       expect(ug.extended_data["verified_at"]).not_to be_nil
       expect(ug.extended_data["rejected_at"]).to be_nil
       expect(ug.extended_data["ec_agents"]).to eq("EC Agents")
-      expect(ug.extended_data["installed_power"]).to eq("100")
+      expect(ug.extended_data["has_installations"]).to be true
+      expect(ug.extended_data["installations"]).to be_an(Array)
+      expect(ug.extended_data["installations"].length).to eq(2)
+      expect(ug.extended_data["installations"][0]["location"]).to eq("Building A, Main Roof")
+      expect(ug.extended_data["installations"][0]["power"]).to eq("50")
+      expect(ug.extended_data["installations"][1]["location"]).to eq("Building B, Secondary Roof")
+      expect(ug.extended_data["installations"][1]["power"]).to eq("50")
       expect(ug.extended_data["legal_form"]).to eq("Cooperative")
       expect(ug.extended_data["creation_date"]).to eq(form.creation_date.to_s)
-      expect(ug.extended_data["assistance"]).to eq("Assistance")
       expect(ug.extended_data["action_types"]).to eq("Thermal Renewables")
       expect(ug.extended_data["financial_support"]).to eq("20")
       expect(ug.extended_data["project_website"]).to eq("https://example.com")

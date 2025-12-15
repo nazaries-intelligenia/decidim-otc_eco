@@ -5,12 +5,12 @@ en:
       group:
         about: Description of the Energy Community
         action_types: Types of actions
-        assistance: Assistance
         contact_person: Contact person
         creation_date: Creation date
         ec_agents: EC Agents
         financial_support: Financial support
-        installed_power: Installed power
+        has_installations: Has active installations?
+        installations: Installations
         legal_form: Legal form
         name: Name of the EC
         project_website: Project website
@@ -156,18 +156,19 @@ en:
       form:
         action_types:
           aggregation: Aggregation
+          collective_self-consumption: Collective self-consumption
           energy_consulting: Energy Consulting
           mobility: Mobility
           others: Others
           rehabilitation: Energy Rehabilitation
+          renewable_energy_production: Renewable Energy Production
           storage: Storage – Demand Management
           thermal_renewables: Thermal Renewables
           training: Training
         action_types_help: Main type of action of the energy community
         action_types_prompt: Select the action type
+        add_installation: Add installation
         address_help: 'Location: used by Geocoder to find the location'
-        assistance_help: Indicate which offices (OTC) or other entities have assisted
-          in the creation of the Energy Community
         avatar_help: Does your CE have a logo? If not, share an image that represents
           you with us.
         contact_person_help: Name of the main contact person
@@ -178,7 +179,12 @@ en:
           etc…
         financial_support_help: Percentage of income and source, public aid, financial
           institution, group loans…
-        installed_power_help: Indicate the kWp (peak power) and the number of installations
+        has_installations_label: Does the energy community already have active installations?
+        installation_location_label: Location
+        installation_location_placeholder: 'E.g: Street, Number'
+        installation_power_label: Peak Power (kWp)
+        installation_power_placeholder: 'E.g: 10'
+        installations_title: EC INSTALLATIONS
         legal_form_help: 'For example: Association, Cooperative with sections, etc…'
         nickname_help: Nickname of your energy community. Do not use spaces nor accents.
         phone_help: Contact phone number
@@ -187,6 +193,7 @@ en:
           hover:text-blue-800">privacy policy</a> and I accept the processing of my
           personal data for the purpose described above.
         project_website_help: Project website (full URL)
+        remove_installation: Remove installation
       join:
         error: There was a problem joining the energy community.
         success: Join request successfully created. An admin will review your request

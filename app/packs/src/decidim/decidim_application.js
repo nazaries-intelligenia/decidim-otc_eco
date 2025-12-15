@@ -3,3 +3,7 @@
 
 // Load images
 require.context("../../images", true)
+
+// Load installations manager
+import "./installations_manager"
+
