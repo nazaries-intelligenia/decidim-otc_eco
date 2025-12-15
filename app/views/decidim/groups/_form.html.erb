@@ -6,6 +6,8 @@
   </div>
   <div>
     <%= f.geocoding_field :address, autocomplete: "off" %>
+    <%= f.hidden_field :latitude %>
+    <%= f.hidden_field :longitude %>
   </div>
 </div>
 

@@ -30,6 +30,10 @@ module Decidim
     end
 
     def map_model(model)
+      self.address = model.address
+      self.latitude = model.latitude
+      self.longitude = model.longitude
+      self.phone = model.extended_data["phone"]
       self.ec_agents = model.extended_data["ec_agents"]
       self.has_installations = model.extended_data["has_installations"]
       self.installations = JSON.parse(model.extended_data["installations"]) if model.extended_data["installations"].present?
