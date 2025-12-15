@@ -22,7 +22,6 @@ module Decidim
             installed_power: form.installed_power,
             legal_form: form.legal_form,
             creation_date: form.creation_date,
-            assistance: form.assistance,
             action_types: form.action_types,
             financial_support: form.financial_support,
             project_website: form.project_website,

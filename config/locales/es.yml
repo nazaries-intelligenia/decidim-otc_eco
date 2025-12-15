@@ -8,7 +8,6 @@ es:
         about: Descripción de la Comunidad Energética
         action_types: Tipología de las actuaciones
         address: Localidad
-        assistance: Asistencias
         avatar: Marca o identidad
         contact_person: Persona de contacto
         creation_date: Fecha de creación
@@ -173,10 +172,12 @@ es:
       form:
         action_types:
           aggregation: Agregación
+          collective_self-consumption: Autoconsumo colectivo
           energy_consulting: Asesoramiento energético
           mobility: Movilidad
           others: Otros
           rehabilitation: Rehabilitación energética
+          renewable_energy_production: Producción de energías renovables
           storage: Almacenamiento – Gestión de la demanda
           thermal_renewables: Renovables Térmicas
           training: Formación
@@ -184,8 +185,6 @@ es:
         action_types_prompt: Selecciona el tipo de acción
         address_help: 'Localidad: utilizada por el geocodificador para encontrar la
           ubicación.'
-        assistance_help: Indica que oficinas (OTC) u otros entes han asistido en la
-          creación de la Comunidad Energética
         avatar_help: "¿Tiene tu CE un logotipo? Si no, comparte con nosotros una imagen
           que os represente."
         contact_person_help: Nombre completo

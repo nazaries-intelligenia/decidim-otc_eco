@@ -30,7 +30,6 @@ RSpec.describe Decidim::CreateUserGroup do
       installed_power: "100",
       legal_form: "Cooperative",
       creation_date: Time.zone.today,
-      assistance: "Assistance",
       action_types: "Thermal Renewables",
       financial_support: "20",
       project_website: "https://example.com",
@@ -60,7 +59,6 @@ RSpec.describe Decidim::CreateUserGroup do
       expect(ug.extended_data["installed_power"]).to eq("100")
       expect(ug.extended_data["legal_form"]).to eq("Cooperative")
       expect(ug.extended_data["creation_date"]).to eq(form.creation_date.to_s)
-      expect(ug.extended_data["assistance"]).to eq("Assistance")
       expect(ug.extended_data["action_types"]).to eq("Thermal Renewables")
       expect(ug.extended_data["financial_support"]).to eq("20")
       expect(ug.extended_data["project_website"]).to eq("https://example.com")

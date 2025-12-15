@@ -26,7 +26,6 @@ RSpec.describe Decidim::UpdateUserGroup do
         installed_power: "50",
         legal_form: "Association",
         creation_date: 1.year.ago.to_date.to_s,
-        assistance: "Old Assistance",
         action_types: "Solar",
         financial_support: "10",
         project_website: "https://old.example.com",
@@ -57,7 +56,6 @@ RSpec.describe Decidim::UpdateUserGroup do
       installed_power: "200",
       legal_form: "Cooperative",
       creation_date: Time.zone.today,
-      assistance: "New Assistance",
       action_types: "Wind Renewables",
       financial_support: "50",
       project_website: "https://new.example.com",
@@ -91,7 +89,6 @@ RSpec.describe Decidim::UpdateUserGroup do
       expect(user_group.extended_data["installed_power"]).to eq("200")
       expect(user_group.extended_data["legal_form"]).to eq("Cooperative")
       expect(user_group.extended_data["creation_date"]).to eq(Time.zone.today.to_s)
-      expect(user_group.extended_data["assistance"]).to eq("New Assistance")
       expect(user_group.extended_data["action_types"]).to eq("Wind Renewables")
       expect(user_group.extended_data["financial_support"]).to eq("50")
       expect(user_group.extended_data["project_website"]).to eq("https://new.example.com")
@@ -124,7 +121,6 @@ RSpec.describe Decidim::UpdateUserGroup do
           installed_power: "200",
           legal_form: "Cooperative",
           creation_date: Time.zone.today,
-          assistance: "New Assistance",
           action_types: "Wind Renewables",
           financial_support: "50",
           project_website: "https://new.example.com",

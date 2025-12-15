@@ -23,10 +23,10 @@
 
 <%= f.date_field :creation_date, help_text: t(".creation_date_help") %>
 
-<%= f.text_field :assistance, help_text: t(".assistance_help") %>
-
 <%= f.select :action_types,
     [
+      [t(".action_types.collective_self-consumption"), "collective_self-consumption"],
+      [t(".action_types.renewable_energy_production"), "renewable_energy_production"],
       [t(".action_types.aggregation"), "aggregation"],
       [t(".action_types.energy_consulting"), "energy_consulting"],
       [t(".action_types.storage"), "storage"],

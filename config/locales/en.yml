@@ -5,7 +5,6 @@ en:
       group:
         about: Description of the Energy Community
         action_types: Types of actions
-        assistance: Assistance
         contact_person: Contact person
         creation_date: Creation date
         ec_agents: EC Agents
@@ -156,18 +155,18 @@ en:
       form:
         action_types:
           aggregation: Aggregation
+          collective_self-consumption: Collective self-consumption
           energy_consulting: Energy Consulting
           mobility: Mobility
           others: Others
           rehabilitation: Energy Rehabilitation
+          renewable_energy_production: Renewable Energy Production
           storage: Storage – Demand Management
           thermal_renewables: Thermal Renewables
           training: Training
         action_types_help: Main type of action of the energy community
         action_types_prompt: Select the action type
         address_help: 'Location: used by Geocoder to find the location'
-        assistance_help: Indicate which offices (OTC) or other entities have assisted
-          in the creation of the Energy Community
         avatar_help: Does your CE have a logo? If not, share an image that represents
           you with us.
         contact_person_help: Name of the main contact person

@@ -12,7 +12,6 @@ module Decidim
       attribute :installed_power
       attribute :legal_form
       attribute :creation_date, Date
-      attribute :assistance
       attribute :action_types
       attribute :financial_support
       attribute :project_website
@@ -23,7 +22,7 @@ module Decidim
       validates :name, format: { with: Decidim::UserBaseEntity::REGEXP_NAME }
       validates :nickname, format: { with: Decidim::UserBaseEntity::REGEXP_NICKNAME }
       validates :project_website, format: { with: URI::DEFAULT_PARSER.make_regexp(%w(http https)), allow_blank: true }
-      validates :ec_agents, :installed_power, :legal_form, :creation_date, :assistance, :action_types, :financial_support, :contact_person,
+      validates :ec_agents, :installed_power, :legal_form, :creation_date, :action_types, :contact_person,
                 presence: true
       validates :privacy_policy_accepted, acceptance: true
     end
@@ -33,7 +32,6 @@ module Decidim
       self.installed_power = model.extended_data["installed_power"]
       self.legal_form = model.extended_data["legal_form"]
       self.creation_date = Date.parse(model.extended_data["creation_date"]) if model.extended_data["creation_date"].present?
-      self.assistance = model.extended_data["assistance"]
       self.action_types = model.extended_data["action_types"]
       self.financial_support = model.extended_data["financial_support"]
       self.project_website = model.extended_data["project_website"]
