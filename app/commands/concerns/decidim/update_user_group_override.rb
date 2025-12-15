@@ -19,7 +19,8 @@ module Decidim
           longitude: form.longitude,
           extended_data: {
             ec_agents: form.ec_agents,
-            installed_power: form.installed_power,
+            has_installations: form.has_installations,
+            installations: form.installations,
             legal_form: form.legal_form,
             creation_date: form.creation_date,
             action_types: form.action_types,

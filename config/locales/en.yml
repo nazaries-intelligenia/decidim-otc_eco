@@ -9,7 +9,8 @@ en:
         creation_date: Creation date
         ec_agents: EC Agents
         financial_support: Financial support
-        installed_power: Installed power
+        has_installations: Has active installations?
+        installations: Installations
         legal_form: Legal form
         name: Name of the EC
         project_website: Project website
@@ -177,7 +178,9 @@ en:
           etc…
         financial_support_help: Percentage of income and source, public aid, financial
           institution, group loans…
-        installed_power_help: Indicate the kWp (peak power) and the number of installations
+        installations_title: EC INSTALLATIONS
+        has_installations_label: "Does the energy community already have active installations?"
+        add_installation: Add installation
         legal_form_help: 'For example: Association, Cooperative with sections, etc…'
         nickname_help: Nickname of your energy community. Do not use spaces nor accents.
         phone_help: Contact phone number

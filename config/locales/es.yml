@@ -13,7 +13,8 @@ es:
         creation_date: Fecha de creación
         ec_agents: Agentes de la CE
         financial_support: Sostenimiento económico
-        installed_power: Potencia instalada
+        has_installations: ¿Posee instalaciones activas?
+        installations: Instalaciones
         legal_form: Forma jurídica
         name: Nombre de la CE
         project_website: Web del proyecto
@@ -195,7 +196,9 @@ es:
           etc…
         financial_support_help: Porcentaje de ingresos y procedencia, ayudas públicas,
           entidad financiera, préstamos colectivos…
-        installed_power_help: Indica los kWp (potencia pico) y el número de instalaciones
+        installations_title: INSTALACIONES DE LA CCEE
+        has_installations_label: "¿Posee la comunidad energética ya instalaciones activas?"
+        add_installation: Añadir instalación
         legal_form_help: 'Por ejemplo: Asociación, Cooperativa con secciones, etc…'
         nickname_help: Alias para tu comunidad energética. No uses espacios ni tildes.
         phone_help: Número de teléfono de contacto

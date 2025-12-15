@@ -17,7 +17,33 @@
 
 <%= f.text_area :ec_agents, rows: 5, help_text: t(".ec_agents_help") %>
 
-<%= f.text_field :installed_power, help_text: t(".installed_power_help") %>
+<div class="mb-4">
+  <h3 class="text-lg font-semibold mb-2"><%= t(".installations_title") %></h3>
+
+  <div class="mb-4">
+    <%= f.check_box :has_installations, label: t(".has_installations_label") %>
+  </div>
+
+  <div id="installations-container" style="display: none;">
+    <div id="installations-list">
+      <!-- Las instalaciones se agregarán aquí dinámicamente -->
+    </div>
+
+    <button type="button" id="add-installation-btn" class="button button__sm button__secondary mt-2">
+      <%= t(".add_installation") %>
+    </button>
+  </div>
+
+  <%
+    installations_obj = f.object.installations
+    installations_value = if installations_obj.present?
+      installations_obj.is_a?(String) ? installations_obj : installations_obj.to_json
+    else
+      ""
+    end
+  %>
+  <%= f.hidden_field :installations, value: installations_value, id: "installations-data" %>
+</div>
 
 <%= f.text_field :legal_form, help_text: t(".legal_form_help") %>
 
