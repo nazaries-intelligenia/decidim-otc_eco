@@ -1,4 +1,4 @@
-// Gestor de instalaciones para comunidades energéticas
+// Installation manager for energy communities
 document.addEventListener('DOMContentLoaded', function() {
   const hasInstallationsCheckbox = document.getElementById('group_has_installations');
   const installationsContainer = document.getElementById('installations-container');
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let installations = [];
   let installationCounter = 0;
 
-  // Obtener traducciones de los data attributes
+  // Get translations from data attributes
   const i18n = {
     locationLabel: installationsContainer.dataset.locationLabel || 'Ubicación',
     locationPlaceholder: installationsContainer.dataset.locationPlaceholder || 'Ej: Edificio A, Tejado Principal',
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     removeBtnText: installationsContainer.dataset.removeBtnText || 'Eliminar instalación'
   };
 
-  // Función para escapar HTML
+  // Function to escape HTML
   function escapeHtml(text) {
     if (!text) return '';
     const div = document.createElement('div');
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return div.innerHTML;
   }
 
-  // Función para cargar instalaciones existentes
+  // Function to load existing installations
   function loadExistingInstallations() {
     const dataValue = installationsDataInput.value;
 
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Función para añadir una instalación al DOM
+  // Function to add an installation to the DOM
   function addInstallationToDOM(installation) {
     const installationId = installation.id !== undefined ? installation.id : installationCounter++;
     const installationDiv = document.createElement('div');
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     installationsList.appendChild(installationDiv);
 
-    // Event listeners para actualizar los datos
+    // Event listeners to update data
     const locationInput = installationDiv.querySelector('.installation-location');
     const powerInput = installationDiv.querySelector('.installation-power');
     const removeBtn = installationDiv.querySelector('.remove-installation-btn');
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Función para añadir una nueva instalación
+  // Function to add a new installation
   function addNewInstallation() {
     const installation = {
       id: installationCounter++,
@@ -119,16 +119,25 @@ document.addEventListener('DOMContentLoaded', function() {
     updateInstallationsData();
   }
 
-  // Función para eliminar una instalación
+  // Function to remove an installation
   function removeInstallation(installationId) {
     const installationDiv = document.querySelector(`[data-installation-id="${installationId}"]`);
     if (installationDiv) {
       installationDiv.remove();
       updateInstallationsData();
+
+      // If no installations remain, uncheck the checkbox and hide the container
+      const remainingInstallations = document.querySelectorAll('.installation-item');
+      if (remainingInstallations.length === 0) {
+        hasInstallationsCheckbox.checked = false;
+        installationsContainer.style.display = 'none';
+        installations = [];
+        installationsDataInput.value = '';
+      }
     }
   }
 
-  // Función para actualizar los datos en el campo oculto
+  // Function to update data in the hidden field
   function updateInstallationsData() {
     const installationItems = document.querySelectorAll('.installation-item');
     installations = [];
@@ -148,29 +157,29 @@ document.addEventListener('DOMContentLoaded', function() {
     installationsDataInput.value = JSON.stringify(installations);
   }
 
-  // Toggle del contenedor de instalaciones
+  // Toggle installations container
   hasInstallationsCheckbox.addEventListener('change', function() {
     if (this.checked) {
       installationsContainer.style.display = 'block';
-      // Si no hay instalaciones, añadir una por defecto
+      // If there are no installations, add one by default
       if (installations.length === 0) {
         addNewInstallation();
       }
     } else {
       installationsContainer.style.display = 'none';
-      // Limpiar las instalaciones
+      // Clear installations
       installationsList.innerHTML = '';
       installations = [];
       installationsDataInput.value = '';
     }
   });
 
-  // Event listener para añadir instalaciones
+  // Event listener to add installations
   if (addInstallationBtn) {
     addInstallationBtn.addEventListener('click', addNewInstallation);
   }
 
-  // Cargar instalaciones existentes si las hay
+  // Load existing installations if any
   loadExistingInstallations();
 });
 
