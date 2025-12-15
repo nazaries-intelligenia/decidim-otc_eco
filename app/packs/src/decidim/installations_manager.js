@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Get translations from data attributes
   const i18n = {
     locationLabel: installationsContainer.dataset.locationLabel || 'Ubicación',
-    locationPlaceholder: installationsContainer.dataset.locationPlaceholder || 'Ej: Edificio A, Tejado Principal',
+    locationPlaceholder: installationsContainer.dataset.locationPlaceholder || 'Ej: Calle, Número',
     powerLabel: installationsContainer.dataset.powerLabel || 'Potencia Pico (kWp)',
     powerPlaceholder: installationsContainer.dataset.powerPlaceholder || 'Ej: 10',
     removeBtnText: installationsContainer.dataset.removeBtnText || 'Eliminar instalación'
